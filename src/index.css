@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --tracking-tight: -0.02em;
+  --leading-tight: 1.1;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+}
+
+:root {
+  --background: #ffffff;
+  /* True white for Notion feel, or #f5f5f7 for Apple */
+  --foreground: #1d1d1f;
+  /* Apple-like off-black */
+  --primary: #0071e3;
+  /* Apple blue */
+  --secondary: #86868b;
+  /* Apple gray */
+  --accent: #f5f5f7;
+}
+
+.dark {
+  --background: #191919;
+  /* Notion dark */
+  --foreground: #ffffff;
+  --primary: #2997ff;
+  --secondary: #9ca3af;
+  --accent: #2d2d2d;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
