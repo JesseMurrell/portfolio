@@ -70,8 +70,8 @@ export const Nav: React.FC = () => {
                             <button
                                 onClick={() => scrollToSection(item.id)}
                                 className={`text-sm font-medium transition-colors duration-300 ${activeSection === item.id || item.subItems?.some(sub => sub.id === activeSection)
-                                        ? 'text-primary'
-                                        : 'text-secondary hover:text-foreground'
+                                    ? 'text-primary'
+                                    : 'text-secondary hover:text-foreground'
                                     }`}
                             >
                                 {item.label}
@@ -94,8 +94,8 @@ export const Nav: React.FC = () => {
                                             <button
                                                 onClick={() => scrollToSection(subItem.id)}
                                                 className={`text-xs transition-colors duration-300 text-left ${activeSection === subItem.id
-                                                        ? 'text-primary font-medium'
-                                                        : 'text-secondary/60 hover:text-foreground'
+                                                    ? 'text-primary font-medium'
+                                                    : 'text-secondary/60 hover:text-foreground'
                                                     }`}
                                             >
                                                 {subItem.label}

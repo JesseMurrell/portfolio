@@ -21,7 +21,12 @@ I have successfully built your portfolio site using React, Vite, and Tailwind CS
 - **Content**:
     - **Hero**: "Hello, I'm Jesse" with links to LinkedIn and Resume.
     - **Worked With**: Infinite loop of company logos (SVG).
-    - **Projects**: Cards for Mental Mamba, Apple, Australa, DescribeMe & Kulinary.
+    - **Projects**: 
+        - Apple-style scroll animations with fade/scale transitions
+        - Full-screen sections with two-column layout
+        - Large typography and minimal design
+        - Mental Mamba: Logo, screenshots, and autoplay video
+        - Parallax effects and glassmorphism
     - **Contact**: Simple contact form.
 
 ## How to Run
