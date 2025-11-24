@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { projects } from './Projects';
 
-const navItems = [
-    { id: 'home', label: 'Home' },
-    {
-        id: 'projects',
-        label: 'Projects',
-        subItems: projects.map(p => ({ id: p.id, label: p.title }))
-    },
-    { id: 'contact', label: 'Contact' },
-];
-
 export const Nav: React.FC = () => {
+    const navItems = React.useMemo(() => [
+        { id: 'home', label: 'Home' },
+        {
+            id: 'projects',
+            label: 'Projects',
+            subItems: projects.map(p => ({ id: p.id, label: p.title }))
+        },
+        { id: 'contact', label: 'Contact' },
+    ], []);
     const [activeSection, setActiveSection] = useState('home');
     const { scrollYProgress } = useScroll();
     const scaleX = useSpring(scrollYProgress, {
@@ -26,6 +25,7 @@ export const Nav: React.FC = () => {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
+                        console.log('Active section:', entry.target.id);
                         setActiveSection(entry.target.id);
                     }
                 });
@@ -45,7 +45,7 @@ export const Nav: React.FC = () => {
         });
 
         return () => observer.disconnect();
-    }, []);
+    }, [navItems]);
 
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
