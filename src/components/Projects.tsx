@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import { AppleMagicBento } from './AppleProject';
 
 // Import Mental Mamba Assets
 import mmLogo from '../assets/project_assets/mental_mamba/heart-logo.svg';
@@ -128,7 +129,11 @@ export const Projects: React.FC = () => {
             <div className="flex flex-col gap-32">
                 {projects.map((project, index) => (
                     <section key={index} id={project.id} className="scroll-mt-32">
-                        <ProjectCard project={project} index={index} />
+                        {project.id === 'apple' ? (
+                            <AppleMagicBento />
+                        ) : (
+                            <ProjectCard project={project} index={index} />
+                        )}
                     </section>
                 ))}
             </div>

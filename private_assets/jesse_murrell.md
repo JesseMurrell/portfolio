@@ -45,7 +45,7 @@ Two years later, I took an even bigger leap and left Apple to gain the freedom t
 - I led the team that built Apple's most complex and secure financial data platform
 - I managed a team of 2 internal engineers and 6 external contractors, driving architecture, security decisions, and hands-on implementation.
 - The platform underpins multiple new Apple financial services and safeguards data for hundreds of millions of users globally.
-- As lead engineer and architect, I owned the system end-to-end - designing the architecture, signing off implementation, writing core components, and being accountable for delivery.
+- As lead åchitect, I owned the system end-to-end - designing the architecture, signing off implementation, writing core components, and being accountable for delivery.
 - I coordinated across VP-level stakeholders, on-device teams, and privacy/legal groups, and secured buy-in from multiple engineering orgs to support and integrate with what we were building.
 - The service underpins these two features.
 - https://developer.apple.com/financekit/
