@@ -128,7 +128,11 @@ export const Projects: React.FC = () => {
 
             <div className="flex flex-col gap-32">
                 {projects.map((project, index) => (
-                    <section key={index} id={project.id} className="scroll-mt-32">
+                    <section 
+                        key={index} 
+                        id={project.id} 
+                        className={project.id === 'apple' ? '' : 'scroll-mt-32'}
+                    >
                         {project.id === 'apple' ? (
                             <AppleMagicBento />
                         ) : (

@@ -148,7 +148,7 @@ const CentralTitleCard: React.FC<CentralTitleCardProps> = ({
             className={`group relative ${className}`}
         >
             <motion.div 
-                className="relative h-full p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all duration-500 flex items-center justify-center"
+                className="relative h-full p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all duration-500 flex items-center justify-center overflow-hidden transform-gpu"
                 whileHover={{ 
                     scale: 1.02,
                     transition: { duration: 0.3 }
@@ -261,7 +261,7 @@ const BentoCard: React.FC<BentoCardProps> = ({
             className={`group relative ${className}`}
         >
             <motion.div 
-                className="relative h-full p-4 md:p-5 lg:p-6 rounded-2xl md:rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all duration-500 flex flex-col"
+                className="relative h-full p-4 md:p-5 lg:p-6 rounded-2xl md:rounded-3xl glass border border-white/5 hover:border-primary/30 transition-all duration-500 flex flex-col overflow-hidden transform-gpu"
                 whileHover={{ 
                     scale: 1.02,
                     transition: { duration: 0.3 }
