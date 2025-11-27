@@ -32,6 +32,14 @@ export const MentalMambaProject: React.FC = () => {
 
     return (
         <div ref={containerRef} className="w-full max-w-7xl mx-auto py-10 px-4 md:px-8">
+            <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="mb-4 ml-2"
+            >
+                <span className="text-sm font-medium text-blue-400 tracking-wide uppercase">Solo Founder</span>
+            </motion.div>
+
             <motion.div 
                 style={{ opacity, y }}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-8"
