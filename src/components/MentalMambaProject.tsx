@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Star, Share, User } from 'lucide-react';
 
 // Import Assets
 import mmLogo from '../assets/project_assets/mental_mamba/heart-logo.svg';
@@ -11,7 +10,7 @@ import mmMultiplication from '../assets/project_assets/mental_mamba/multiplicati
 import mmDetails from '../assets/project_assets/mental_mamba/details_summary_formatted_clean.jpeg';
 
 import appleLogo from '../assets/company_logos/apple-white.svg';
-import googleLogo from '../assets/company_logos/google.svg';
+import playStoreLogo from '../assets/company_logos/playstore.svg';
 
 export const MentalMambaProject: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -40,8 +39,8 @@ export const MentalMambaProject: React.FC = () => {
                 {/* Left Card - Project Explanation */}
                 <div className="bg-[#1c1c1e]/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-2xl flex flex-col justify-between h-full">
                     <div>
-                        <div className="w-20 h-20 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-8 border border-blue-500/20">
-                            <img src={mmLogo} alt="Mental Mamba Logo" className="w-10 h-10" />
+                        <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-8">
+                            <img src={mmLogo} alt="Mental Mamba Logo" className="w-16 h-16" />
                         </div>
                         
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
@@ -78,7 +77,7 @@ export const MentalMambaProject: React.FC = () => {
                     </div>
 
                     <div className="flex flex-wrap gap-3 mt-auto">
-                        {['SwiftUI', 'GameKit', 'CloudKit', 'Combine'].map((tag) => (
+                        {['React Native', 'Swift', 'GameKit', 'AWS', 'RevenueCat'].map((tag) => (
                             <span key={tag} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-gray-300">
                                 {tag}
                             </span>
@@ -102,30 +101,39 @@ export const MentalMambaProject: React.FC = () => {
                                         href="https://apps.apple.com/gb/app/mental-mamba/id6743010712"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="px-4 py-1.5 bg-[#007AFF] hover:bg-[#0062cc] text-white rounded-full text-xs font-bold transition-colors"
+                                        className="flex items-center gap-1.5 px-3 py-1.5 bg-[#007AFF] hover:bg-[#0062cc] text-white rounded-full transition-colors shadow-lg shadow-blue-900/20"
+                                        aria-label="Download on the App Store"
                                     >
-                                        GET
+                                        <img src={appleLogo} alt="App Store" className="w-auto h-3.5" />
+                                        <span className="text-[10px] font-bold uppercase tracking-wide">Get</span>
                                     </a>
-                                    <button className="p-1.5 rounded-full bg-[#3c4043] text-[#007AFF] hover:bg-[#4a4e52] transition-colors">
-                                        <Share className="w-4 h-4" />
-                                    </button>
+                                    <a 
+                                        href="https://play.google.com/store/apps/details?id=com.jessekmurrell.mentalmamba"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-1.5 px-3 py-1.5 bg-[#3c4043] hover:bg-[#4a4e52] text-white rounded-full transition-colors border border-white/10"
+                                        aria-label="Get it on Google Play"
+                                    >
+                                        <img src={playStoreLogo} alt="Google Play" className="w-3.5 h-3.5" />
+                                        <span className="text-[10px] font-bold uppercase tracking-wide">Get</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         {/* Stats */}
                         <div className="flex justify-between border-t border-b border-white/10 py-4 mb-6 overflow-x-auto">
-                            <div className="px-4 text-center border-r border-white/10 last:border-0">
-                                <div className="text-[10px] font-bold text-gray-500 mb-0.5">4.9 STARS</div>
+                            <div className="px-4 text-right border-r border-white/10 last:border-0">
+                                <div className="text-[10px] font-bold text-gray-500 mb-0.5">5 STARS</div>
                                 <div className="text-lg font-bold text-gray-300">★★★★★</div>
                             </div>
-                            <div className="px-4 text-center border-r border-white/10 last:border-0">
+                            <div className="px-4 text-right border-r border-white/10 last:border-0">
                                 <div className="text-[10px] font-bold text-gray-500 mb-0.5">AGE</div>
                                 <div className="text-lg font-bold text-gray-300">4+</div>
                             </div>
-                            <div className="px-4 text-center border-r border-white/10 last:border-0">
-                                <div className="text-[10px] font-bold text-gray-500 mb-0.5">CHART</div>
-                                <div className="text-lg font-bold text-gray-300">#12</div>
+                            <div className="px-4 text-right border-r border-white/10 last:border-0">
+                                <div className="text-[10px] font-bold text-gray-500 mb-0.5">CATEGORY</div>
+                                <div className="text-lg font-bold text-gray-300">Education, Puzzle</div>
                             </div>
                         </div>
                     </div>
@@ -195,7 +203,7 @@ export const MentalMambaProject: React.FC = () => {
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-3 w-full py-3 bg-[#1c1c1e] border border-white/20 hover:bg-white/5 text-white rounded-xl font-medium transition-all group"
                                 >
-                                    <img src={googleLogo} alt="Google Play" className="w-5 h-5 opacity-80 group-hover:opacity-100" />
+                                    <img src={playStoreLogo} alt="Google Play" className="w-5 h-5 opacity-80 group-hover:opacity-100" />
                                     Get it on Google Play
                                 </a>
                             </div>
