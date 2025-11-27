@@ -132,7 +132,7 @@ export const Projects: React.FC = () => {
                     <section 
                         key={index} 
                         id={project.id} 
-                        className={project.id === 'apple' ? '' : 'scroll-mt-32'}
+                        className={project.id === 'apple' || project.id === 'mental-mamba' ? '' : 'scroll-mt-32'}
                     >
                         {project.id === 'apple' ? (
                             <AppleMagicBento />
