@@ -50,7 +50,14 @@ export const Nav: React.FC = () => {
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            // Use 'center' alignment for specific project sections like 'apple' to ensure they are vertically centered
+            // Use 'start' for main sections or longer content lists
+            const shouldCenter = ['apple', 'home', 'contact'].includes(id) || projects.some(p => p.id === id);
+            
+            element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: shouldCenter ? 'center' : 'start'
+            });
         }
     };
 
