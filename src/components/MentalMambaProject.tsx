@@ -1,0 +1,208 @@
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Star, Share, User } from 'lucide-react';
+
+// Import Assets
+import mmLogo from '../assets/project_assets/mental_mamba/heart-logo.svg';
+import mmVideo from '../assets/project_assets/mental_mamba/gameplay_video_30_trimmed_encoded_silent.mov';
+import mmHome from '../assets/project_assets/mental_mamba/home_formatted_clean.jpeg';
+import mmMathsQuest from '../assets/project_assets/mental_mamba/maths_quest_formatted_clean.jpeg';
+import mmMultiplication from '../assets/project_assets/mental_mamba/multiplication_formatted_clean.jpeg';
+import mmDetails from '../assets/project_assets/mental_mamba/details_summary_formatted_clean.jpeg';
+
+import appleLogo from '../assets/company_logos/apple-white.svg';
+import googleLogo from '../assets/company_logos/google.svg';
+
+export const MentalMambaProject: React.FC = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
+
+    const screenshots = [
+        { type: 'video', src: mmVideo },
+        { type: 'image', src: mmHome },
+        { type: 'image', src: mmMathsQuest },
+        { type: 'image', src: mmMultiplication },
+        { type: 'image', src: mmDetails },
+    ];
+
+    return (
+        <div ref={containerRef} className="w-full max-w-7xl mx-auto py-10 px-4 md:px-8">
+            <motion.div 
+                style={{ opacity, y }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            >
+                {/* Left Card - Project Explanation */}
+                <div className="bg-[#1c1c1e]/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-2xl flex flex-col justify-between h-full">
+                    <div>
+                        <div className="w-20 h-20 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-8 border border-blue-500/20">
+                            <img src={mmLogo} alt="Mental Mamba Logo" className="w-10 h-10" />
+                        </div>
+                        
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                            Mental Mamba
+                        </h2>
+                        
+                        <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                            A retro-style arcade game that blends classic snake gameplay with fast-paced mental math challenges. Designed to train your brain under pressure while delivering pure arcade fun.
+                        </p>
+
+                        <div className="space-y-6 mb-10">
+                            <div className="flex items-start gap-4">
+                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2.5" />
+                                <div>
+                                    <h4 className="text-white font-semibold text-lg mb-1">Maths Quest</h4>
+                                    <p className="text-gray-400">Over 140 structured learning modules covering addition, subtraction, multiplication, and division.</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                                <div className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2.5" />
+                                <div>
+                                    <h4 className="text-white font-semibold text-lg mb-1">Arcade Mode</h4>
+                                    <p className="text-gray-400">Race against time in high-intensity challenges where speed and accuracy determine your score.</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2.5" />
+                                <div>
+                                    <h4 className="text-white font-semibold text-lg mb-1">Cross-Platform</h4>
+                                    <p className="text-gray-400">Seamlessly sync progress across iOS and Android devices with cloud save.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-3 mt-auto">
+                        {['SwiftUI', 'GameKit', 'CloudKit', 'Combine'].map((tag) => (
+                            <span key={tag} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-gray-300">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Right Card - Slim App Store */}
+                <div className="bg-[#1c1c1e]/80 backdrop-blur-xl rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl flex flex-col h-[800px]">
+                    {/* Header */}
+                    <div className="p-8 pb-0">
+                        <div className="flex gap-5 items-center mb-6">
+                            <div className="w-24 h-24 rounded-[22%] overflow-hidden border border-white/10 shadow-lg bg-black flex-shrink-0">
+                                <img src={mmLogo} alt="Mental Mamba Logo" className="w-full h-full object-cover p-3" />
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold text-white mb-1">Mental Mamba</h3>
+                                <p className="text-gray-400 font-medium text-sm mb-3">Retro Snake Math Game</p>
+                                <div className="flex gap-2">
+                                    <a 
+                                        href="https://apps.apple.com/gb/app/mental-mamba/id6743010712"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-4 py-1.5 bg-[#007AFF] hover:bg-[#0062cc] text-white rounded-full text-xs font-bold transition-colors"
+                                    >
+                                        GET
+                                    </a>
+                                    <button className="p-1.5 rounded-full bg-[#3c4043] text-[#007AFF] hover:bg-[#4a4e52] transition-colors">
+                                        <Share className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Stats */}
+                        <div className="flex justify-between border-t border-b border-white/10 py-4 mb-6 overflow-x-auto">
+                            <div className="px-4 text-center border-r border-white/10 last:border-0">
+                                <div className="text-[10px] font-bold text-gray-500 mb-0.5">4.9 STARS</div>
+                                <div className="text-lg font-bold text-gray-300">★★★★★</div>
+                            </div>
+                            <div className="px-4 text-center border-r border-white/10 last:border-0">
+                                <div className="text-[10px] font-bold text-gray-500 mb-0.5">AGE</div>
+                                <div className="text-lg font-bold text-gray-300">4+</div>
+                            </div>
+                            <div className="px-4 text-center border-r border-white/10 last:border-0">
+                                <div className="text-[10px] font-bold text-gray-500 mb-0.5">CHART</div>
+                                <div className="text-lg font-bold text-gray-300">#12</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Vertical Scrolling Content */}
+                    <div className="overflow-y-auto flex-grow hide-scrollbar relative">
+                        {/* Gallery - Horizontal Scroll */}
+                        <div className="overflow-x-auto pl-8 pb-8 hide-scrollbar w-full">
+                            <div className="flex gap-4 w-max pr-8">
+                                {screenshots.map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className="w-[220px] h-[480px] rounded-[2rem] overflow-hidden bg-black/50 border border-white/10 flex-shrink-0 relative"
+                                    >
+                                        {item.type === 'video' ? (
+                                            <video 
+                                                src={item.src}
+                                                autoPlay 
+                                                loop 
+                                                muted 
+                                                playsInline
+                                                className="w-full h-full object-cover"
+                                            />
+                                        ) : (
+                                            <img 
+                                                src={item.src} 
+                                                alt={`Screenshot ${index}`} 
+                                                className="w-full h-full object-cover"
+                                            />
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Description & What's New */}
+                        <div className="px-8 pb-8">
+                             <div className="mb-8">
+                                <div className="flex justify-between items-baseline mb-3">
+                                    <h3 className="text-xl font-bold text-white">What's New</h3>
+                                    <span className="text-[#007AFF] text-sm font-medium">Version 2.0</span>
+                                </div>
+                                <div className="text-sm text-gray-300 leading-relaxed">
+                                    <p className="font-medium text-white mb-1">Maths Quest Update!</p>
+                                    <p>Transform your mental arithmetic with our biggest update yet. Maths Quest brings over 140 structured learning modules.</p>
+                                </div>
+                            </div>
+
+                            <p className="text-gray-300 leading-relaxed text-sm mb-8">
+                                Mental Mamba is a retro-style arcade game that blends classic snake gameplay with fast-paced mental math challenges. Collect the right answer to math problems to grow your snake — but choose wrong and you'll lose a life.
+                            </p>
+
+                            {/* Download Buttons */}
+                            <div className="space-y-3">
+                                <a 
+                                    href="https://apps.apple.com/gb/app/mental-mamba/id6743010712"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-3 w-full py-3 bg-[#1c1c1e] border border-white/20 hover:bg-white/5 text-white rounded-xl font-medium transition-all group"
+                                >
+                                    <img src={appleLogo} alt="Apple" className="w-5 h-5 opacity-80 group-hover:opacity-100" />
+                                    Download on the App Store
+                                </a>
+                                <a 
+                                    href="https://play.google.com/store/apps/details?id=com.jessekmurrell.mentalmamba"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-3 w-full py-3 bg-[#1c1c1e] border border-white/20 hover:bg-white/5 text-white rounded-xl font-medium transition-all group"
+                                >
+                                    <img src={googleLogo} alt="Google Play" className="w-5 h-5 opacity-80 group-hover:opacity-100" />
+                                    Get it on Google Play
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+        </div>
+    );
+};

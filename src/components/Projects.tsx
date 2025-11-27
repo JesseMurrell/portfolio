@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { AppleMagicBento } from './AppleProject';
+import { MentalMambaProject } from './MentalMambaProject';
 
 // Import Mental Mamba Assets
 import mmLogo from '../assets/project_assets/mental_mamba/heart-logo.svg';
@@ -80,7 +81,7 @@ const ProjectCard: React.FC<{ project: typeof projects[0]; index: number }> = ({
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group block p-10 rounded-[2rem] glass hover:bg-white/10 transition-all duration-500 border border-white/5 hover:border-primary/20 relative overflow-hidden h-full`}
+                className={`group block p-10 rounded-4xl glass hover:bg-white/10 transition-all duration-500 border border-white/5 hover:border-primary/20 relative overflow-hidden h-full`}
             >
                 <div className={`absolute inset-0 ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl`} />
 
@@ -94,7 +95,7 @@ const ProjectCard: React.FC<{ project: typeof projects[0]; index: number }> = ({
                         </div>
                     </div>
 
-                    <p className="text-lg text-secondary mb-10 flex-grow leading-relaxed font-medium">
+                    <p className="text-lg text-secondary mb-10 grow leading-relaxed font-medium">
                         {project.description}
                     </p>
 
@@ -135,6 +136,8 @@ export const Projects: React.FC = () => {
                     >
                         {project.id === 'apple' ? (
                             <AppleMagicBento />
+                        ) : project.id === 'mental-mamba' ? (
+                            <MentalMambaProject />
                         ) : (
                             <ProjectCard project={project} index={index} />
                         )}
