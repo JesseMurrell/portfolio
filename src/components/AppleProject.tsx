@@ -14,6 +14,13 @@ export const AppleMagicBento: React.FC<AppleMagicBentoProps> = ({ className = ''
             {/* Bento Grid */}
             <div className="w-full max-w-[95vw] mx-auto px-4 md:px-6 lg:px-8">
                 <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    className="mb-4 ml-2"
+                >
+                    <span className="text-sm font-medium text-blue-400 tracking-wide uppercase">Permanent Role</span>
+                </motion.div>
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
