@@ -10,7 +10,7 @@ interface ScrollStackItem {
     source: string;
     date?: string;
     logo?: string;
-    role?: string; // Added role prop
+    role?: string; // Add role property
 }
 
 interface ScrollStackProps {
@@ -22,15 +22,13 @@ const Card = ({
     index, 
     progress, 
     range, 
-    targetScale,
-    totalItems
+    targetScale 
 }: { 
     item: ScrollStackItem; 
     index: number; 
     progress: MotionValue<number>; 
     range: number[]; 
     targetScale: number; 
-    totalItems: number;
 }) => {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -39,20 +37,6 @@ const Card = ({
     });
 
     const scale = useTransform(progress, range, [1, targetScale]);
-    
-    // Dynamic opacity logic for role
-    // Calculate the range where this card is the "active" one
-    const stepSize = 1 / totalItems;
-    const start = index * stepSize;
-    const end = (index + 1) * stepSize;
-    
-    // Fade out the role as we transition to the next card
-    // We want it visible from 0 to start, then fade out as we approach end
-    const roleOpacity = useTransform(
-        progress,
-        [start, start + (stepSize * 0.6)], // Start fading out halfway through this card's "time"
-        [1, 0]
-    );
     
     return (
         <div 
@@ -64,11 +48,17 @@ const Card = ({
                 style={{ scale, top: `calc(-10% + ${index * 25}px)` }} 
                 className="relative w-[45vw] max-w-[600px] h-[400px] flex flex-col origin-top mr-10 md:mr-20"
             >
-                <motion.div style={{ opacity: roleOpacity }} className="mb-4 ml-2 h-5">
-                    {item.role && (
+                {/* Role Header */}
+                {item.role && (
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        className="mb-4 ml-2"
+                    >
                         <span className="text-xs font-medium text-blue-400 tracking-wide uppercase">{item.role}</span>
-                    )}
-                </motion.div>
+                    </motion.div>
+                )}
+
                 <a 
                     href={item.link}
                     target="_blank"
@@ -122,7 +112,6 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({ items }) => {
                         progress={scrollYProgress}
                         range={[i * (1 / items.length), 1]}
                         targetScale={targetScale}
-                        totalItems={items.length}
                     />
                 );
             })}

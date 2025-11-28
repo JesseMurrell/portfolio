@@ -91,7 +91,7 @@ should be concise
 
 **Stage**
 Pull organisation information from stage.tech and salt.music
-Jesse's role was Engineer Manager and quickly promoted to Head of Platform. The AI/ML, Data Platform and Cloud Ops teams. Responsible for all AI service delivery. Worked across all Stages properties, Salt (salt.music), Session (https://www.sessionstudio.com/) and Connex (https://www.connex.music/).
+Jesse's role was Engineer Manager and quickly promoted to Head of Platform. The AI/ML, Data Platform and Cloud Ops teams. Responsible for all AI/ML service delivery, as well as management of cloud ops and the data platfrom. Worked across all Stages properties, Salt (salt.music), Session (https://www.sessionstudio.com/) and Connex (https://www.connex.music/).
 
 Features built 
 

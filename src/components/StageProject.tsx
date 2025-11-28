@@ -5,7 +5,6 @@ import { ScrollStack } from './ScrollStack';
 // Import logos
 import universalLogo from '../assets/company_logos/universal.svg';
 import saltLogo from '../assets/project_assets/stage/salt-logo.svg';
-import mlcLogo from '../assets/project_assets/stage/news_cards/mlc_logo.svg';
 import massiveLogo from '../assets/project_assets/stage/news_cards/massive_logo.svg';
 import musicAllyLogo from '../assets/project_assets/stage/news_cards/MUSIC-ALLY-NEW-LOGO.webp';
 import musicWeekLogo from '../assets/project_assets/stage/news_cards/music_week.png';
@@ -20,38 +19,8 @@ const articles = [
         link: 'https://salt.music/posts/salt-signs-first-us-deal',
         source: 'Salt',
         date: '2024',
-        logo: mlcLogo,
+        logo: saltLogo,
         role: 'Lead team which built PoC for RFP'
-    },
-    {
-        id: 'salt-massive-music',
-        title: 'Salt Signs Massive Music as Strategic Partner',
-        description: 'Partnership with Massive Music Entertainment to expand presence in the Asian market.',
-        link: 'https://salt.music/posts/salt-signs-massive-music-entertainment-as-first-strategic-partner-in-asia',
-        source: 'Salt',
-        date: '2024',
-        logo: massiveLogo,
-        role: 'Lead team which built PoC for RFP'
-    },
-    {
-        id: 'universal-connex',
-        title: 'Universal Music Adopts Connex',
-        description: 'Universal Music Group adopts the newly launched Connex platform for music credit management.',
-        link: 'https://www.musicbusinessworldwide.com/universal-music-adopts-newly-launched-connex-platform-for-music-credit-management/',
-        source: 'Music Business Worldwide',
-        date: '2024',
-        logo: universalLogo,
-        role: 'Lead team which built PoC for RFP'
-    },
-    {
-        id: 'connex-launch',
-        title: 'Connex Launches with Universal Music',
-        description: 'A&R admin platform Connex launches with Universal Music as a key partner.',
-        link: 'https://www.musicweek.com/labels/read/a-r-admin-platform-connex-launches-with-universal-music/091876',
-        source: 'Music Week',
-        date: '2024',
-        logo: musicWeekLogo,
-        role: 'Design & Architected AI Services'
     },
     {
         id: 'salt-innovate-uk',
@@ -61,7 +30,37 @@ const articles = [
         source: 'Music Ally',
         date: 'September 2024',
         logo: musicAllyLogo,
-        role: 'Design & Architected AI Services'
+        role: 'Owned, Lead on and delivery requirements for Innovate UK grant'
+    },
+    {
+        id: 'salt-massive-music',
+        title: 'Salt Signs Massive Music as Strategic Partner',
+        description: 'Partnership with Massive Music Entertainment to expand presence in the Asian market.',
+        link: 'https://salt.music/posts/salt-signs-massive-music-entertainment-as-first-strategic-partner-in-asia',
+        source: 'Salt',
+        date: '2025',
+        logo: massiveLogo,
+        role: 'Designed ML Services for Massive'
+    },
+    {
+        id: 'universal-connex',
+        title: 'Universal Music Adopts Connex',
+        description: 'Universal Music Group adopts the newly launched Connex platform for music credit management.',
+        link: 'https://www.musicbusinessworldwide.com/universal-music-adopts-newly-launched-connex-platform-for-music-credit-management/',
+        source: 'Music Business Worldwide',
+        date: '2025',
+        logo: universalLogo,
+        role: 'Lead Data platform and AI/ML service teams on Connex'
+    },
+    {
+        id: 'connex-launch',
+        title: 'Connex Launches with Universal Music',
+        description: 'A&R admin platform Connex launches with Universal Music as a key partner.',
+        link: 'https://www.musicweek.com/labels/read/a-r-admin-platform-connex-launches-with-universal-music/091876',
+        source: 'Music Week',
+        date: '2025',
+        logo: musicWeekLogo,
+        role: 'Lead Technical Delivery Requirements for UMG'
     }
 ];
 
@@ -73,16 +72,25 @@ const properties = [
 
 export const StageProject: React.FC = () => {
     return (
-        <div className="w-full bg-[#0a0a0a] rounded-4xl border border-white/5 relative">
-            <div className="flex flex-col lg:flex-row">
-                {/* Left Content Section - Sticky */}
-                <div className="lg:w-1/2 p-10 md:p-20 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center z-10">
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="flex flex-wrap gap-4 mb-8"
-                    >
+        <div className="w-full">
+            <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="mb-4 ml-2"
+            >
+                <span className="text-sm font-medium text-blue-400 tracking-wide uppercase">Contract Role</span>
+            </motion.div>
+
+            <div className="bg-[#0a0a0a] rounded-4xl border border-white/5 relative">
+                <div className="flex flex-col lg:flex-row">
+                    {/* Left Content Section - Sticky */}
+                    <div className="lg:w-1/2 p-10 md:p-20 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center z-10">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="flex flex-wrap gap-4 mb-8"
+                        >
                         <span className="px-4 py-1.5 text-sm font-medium rounded-full bg-white/10 text-white/80 border border-white/5">
                             Head of Platform
                         </span>
@@ -112,17 +120,15 @@ export const StageProject: React.FC = () => {
                         className="space-y-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-xl"
                     >
                         <p>
-                            When I joined Stage, the team was junior, inexperienced with enterprise systems, 
-                            and not used to operating under hard delivery pressure.
+                            I joined Stage as Engineering Manager to deliver AI/ML services. After meeting every milestone and successfully achieving Stage's Innovate UK obligations, I was quickly promoted to Head of Platform, leading the AI/ML, 
+                            Data Platform and Cloud Ops teams. 
                         </p>
                         <p>
-                            I acted simultaneously as engineering manager, architect, mentor, and product manager. 
-                            I grew the team dramatically, hit every grant obligation, and shipped multiple products 
-                            while transforming the engineering culture.
+                            My role at Stage is heavily strategic, wearing many hats, including engineering manager, architect, technical sales executive, mentor, and product manager. 
                         </p>
                         <div className="pt-4">
                             <p className="mb-6 text-white/50 text-sm uppercase tracking-widest font-medium">
-                                Responsible for all AI service delivery across:
+                                Responsible for all AI/ML service delivery across:
                             </p>
                             <div className="flex flex-wrap items-center gap-8">
                                 {properties.map((prop) => (
@@ -145,9 +151,10 @@ export const StageProject: React.FC = () => {
                     </motion.div>
                 </div>
 
-                {/* Right Scroll Stack Section */}
-                <div className="lg:w-1/2">
-                    <ScrollStack items={articles} />
+                    {/* Right Scroll Stack Section */}
+                    <div className="lg:w-1/2">
+                        <ScrollStack items={articles} />
+                    </div>
                 </div>
             </div>
         </div>
