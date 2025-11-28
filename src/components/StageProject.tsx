@@ -1,0 +1,155 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ScrollStack } from './ScrollStack';
+
+// Import logos
+import universalLogo from '../assets/company_logos/universal.svg';
+import saltLogo from '../assets/project_assets/stage/salt-logo.svg';
+import mlcLogo from '../assets/project_assets/stage/news_cards/mlc_logo.svg';
+import massiveLogo from '../assets/project_assets/stage/news_cards/massive_logo.svg';
+import musicAllyLogo from '../assets/project_assets/stage/news_cards/MUSIC-ALLY-NEW-LOGO.webp';
+import musicWeekLogo from '../assets/project_assets/stage/news_cards/music_week.png';
+import sessionLogo from '../assets/project_assets/stage/session_studio_logo.svg';
+import connexLogo from '../assets/project_assets/stage/connex logo.png';
+
+const articles = [
+    {
+        id: 'salt-us-deal',
+        title: 'Salt Signs First US Deal',
+        description: 'Salt signs its first major US deal, marking a significant milestone in its global expansion strategy.',
+        link: 'https://salt.music/posts/salt-signs-first-us-deal',
+        source: 'Salt',
+        date: '2024',
+        logo: mlcLogo,
+        role: 'Lead team which built PoC for RFP'
+    },
+    {
+        id: 'salt-massive-music',
+        title: 'Salt Signs Massive Music as Strategic Partner',
+        description: 'Partnership with Massive Music Entertainment to expand presence in the Asian market.',
+        link: 'https://salt.music/posts/salt-signs-massive-music-entertainment-as-first-strategic-partner-in-asia',
+        source: 'Salt',
+        date: '2024',
+        logo: massiveLogo,
+        role: 'Lead team which built PoC for RFP'
+    },
+    {
+        id: 'universal-connex',
+        title: 'Universal Music Adopts Connex',
+        description: 'Universal Music Group adopts the newly launched Connex platform for music credit management.',
+        link: 'https://www.musicbusinessworldwide.com/universal-music-adopts-newly-launched-connex-platform-for-music-credit-management/',
+        source: 'Music Business Worldwide',
+        date: '2024',
+        logo: universalLogo,
+        role: 'Lead team which built PoC for RFP'
+    },
+    {
+        id: 'connex-launch',
+        title: 'Connex Launches with Universal Music',
+        description: 'A&R admin platform Connex launches with Universal Music as a key partner.',
+        link: 'https://www.musicweek.com/labels/read/a-r-admin-platform-connex-launches-with-universal-music/091876',
+        source: 'Music Week',
+        date: '2024',
+        logo: musicWeekLogo,
+        role: 'Design & Architected AI Services'
+    },
+    {
+        id: 'salt-innovate-uk',
+        title: 'Salt Taps Innovate UK Funding',
+        description: 'Royalties firm Salt secures Innovate UK funding to push AI development forward.',
+        link: 'https://musically.com/2024/09/12/royalties-firm-salt-taps-innovate-uk-funding-for-ai-push/',
+        source: 'Music Ally',
+        date: 'September 2024',
+        logo: musicAllyLogo,
+        role: 'Design & Architected AI Services'
+    }
+];
+
+const properties = [
+    { name: 'Salt', url: 'https://salt.music', logo: saltLogo, width: 'w-24' },
+    { name: 'Session', url: 'https://www.sessionstudio.com/', logo: sessionLogo, width: 'w-32' },
+    { name: 'Connex', url: 'https://www.connex.music/', logo: connexLogo, width: 'w-32' }
+];
+
+export const StageProject: React.FC = () => {
+    return (
+        <div className="w-full bg-[#0a0a0a] rounded-4xl border border-white/5 relative">
+            <div className="flex flex-col lg:flex-row">
+                {/* Left Content Section - Sticky */}
+                <div className="lg:w-1/2 p-10 md:p-20 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center z-10">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="flex flex-wrap gap-4 mb-8"
+                    >
+                        <span className="px-4 py-1.5 text-sm font-medium rounded-full bg-white/10 text-white/80 border border-white/5">
+                            Head of Platform
+                        </span>
+                        <span className="px-4 py-1.5 text-sm font-medium rounded-full bg-white/5 text-white/60 border border-white/5">
+                            Engineering Manager
+                        </span>
+                        <span className="px-4 py-1.5 text-sm font-medium rounded-full bg-white/5 text-white/60 border border-white/5">
+                            AI/ML
+                        </span>
+                    </motion.div>
+
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-bold text-white mb-8"
+                    >
+                        Stage
+                    </motion.h2>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="space-y-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-xl"
+                    >
+                        <p>
+                            When I joined Stage, the team was junior, inexperienced with enterprise systems, 
+                            and not used to operating under hard delivery pressure.
+                        </p>
+                        <p>
+                            I acted simultaneously as engineering manager, architect, mentor, and product manager. 
+                            I grew the team dramatically, hit every grant obligation, and shipped multiple products 
+                            while transforming the engineering culture.
+                        </p>
+                        <div className="pt-4">
+                            <p className="mb-6 text-white/50 text-sm uppercase tracking-widest font-medium">
+                                Responsible for all AI service delivery across:
+                            </p>
+                            <div className="flex flex-wrap items-center gap-8">
+                                {properties.map((prop) => (
+                                    <a 
+                                        key={prop.name}
+                                        href={prop.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group flex items-center gap-3 hover:opacity-80 transition-opacity"
+                                    >
+                                        <img 
+                                            src={prop.logo} 
+                                            alt={`${prop.name} logo`}
+                                            className={`h-12 ${prop.width} object-contain opacity-90 group-hover:opacity-100 transition-opacity ${prop.name === 'Session' ? 'brightness-0 invert' : ''}`}
+                                        />
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* Right Scroll Stack Section */}
+                <div className="lg:w-1/2">
+                    <ScrollStack items={articles} />
+                </div>
+            </div>
+        </div>
+    );
+};
