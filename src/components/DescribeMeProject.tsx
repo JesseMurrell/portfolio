@@ -80,7 +80,7 @@ export const DescribeMeProject: React.FC = () => {
                     </div>
 
                     <div className="flex flex-wrap gap-3 mt-auto">
-                        {['iOS', 'SwiftUI', 'OpenAI', 'AI'].map((tag) => (
+                        {['React Native','OpenAI', 'AI'].map((tag) => (
                             <span key={tag} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-gray-300">
                                 {tag}
                             </span>
