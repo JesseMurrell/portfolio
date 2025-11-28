@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { AppleMagicBento } from './AppleProject';
 import { MentalMambaProject } from './MentalMambaProject';
+import { StageProject } from './StageProject';
 
 // Import Mental Mamba Assets
 import mmLogo from '../assets/project_assets/mental_mamba/heart-logo.svg';
@@ -33,11 +34,11 @@ export const projects = [
         assets: null,
     },
     {
-        id: 'australa',
-        title: 'Australa',
-        description: 'Design and engineering consultancy work. Transformed culture and performance at Stage.',
-        link: 'https://www.australa.co',
-        tags: ['Consultancy', 'Leadership', 'Engineering'],
+        id: 'stage',
+        title: 'Stage',
+        description: 'Transformed culture and performance. Head of Platform & Engineering Manager.',
+        link: 'https://stage.tech',
+        tags: ['Leadership', 'AI/ML', 'Platform'],
         color: 'bg-purple-500/5',
         assets: null,
     },
@@ -132,12 +133,14 @@ export const Projects: React.FC = () => {
                     <section 
                         key={index} 
                         id={project.id} 
-                        className={project.id === 'apple' || project.id === 'mental-mamba' ? '' : 'scroll-mt-32'}
+                        className={project.id === 'apple' || project.id === 'mental-mamba' || project.id === 'stage' ? '' : 'scroll-mt-32'}
                     >
                         {project.id === 'apple' ? (
                             <AppleMagicBento />
                         ) : project.id === 'mental-mamba' ? (
                             <MentalMambaProject />
+                        ) : project.id === 'stage' ? (
+                            <StageProject />
                         ) : (
                             <ProjectCard project={project} index={index} />
                         )}

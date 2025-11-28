@@ -89,8 +89,16 @@ Pull information from
 White details takign inspiration from this https://mentalmamba.australa.co
 should be concise
 
-**Australa**
-Design and engineerig consultancy work. Pull info from https://www.australa.co 
+**Stage**
+Pull organisation information from stage.tech and salt.music
+Jesse's role was Engineer Manager and quickly promoted to Head of Platform. The AI/ML, Data Platform and Cloud Ops teams. Responsible for all AI service delivery. Worked across all Stages properties, Salt (salt.music), Session (https://www.sessionstudio.com/) and Connex (https://www.connex.music/).
+
+Features built 
+
+Should be a header with information about Jesse contributions and role, then a stack of article related to his delivery using this scroll stack componet https://reactbits.dev/components/scroll-stack
+
+articles - https://salt.music/posts/salt-signs-first-us-deal,   https://salt.music/posts/salt-signs-massive-music-entertainment-as-first-strategic-partner-in-asia, https://www.musicbusinessworldwide.com/universal-music-adopts-newly-launched-connex-platform-for-music-credit-management/, https://www.musicweek.com/labels/read/a-r-admin-platform-connex-launches-with-universal-music/091876 https://musically.com/2024/09/12/royalties-firm-salt-taps-innovate-uk-funding-for-ai-push/
+
 
 **DescribeMe** 
 https://chromewebstore.google.com/detail/kulinary/mpjdadlofjgdhlaocbdjohlmmffekpan?hl=en-GB 
