@@ -4,6 +4,7 @@ import { ExternalLink } from 'lucide-react';
 import { AppleMagicBento } from './AppleProject';
 import { MentalMambaProject } from './MentalMambaProject';
 import { StageProject } from './StageProject';
+import { DescribeMeProject } from './DescribeMeProject';
 
 // Import Mental Mamba Assets
 import mmLogo from '../assets/project_assets/mental_mamba/heart-logo.svg';
@@ -54,10 +55,10 @@ export const projects = [
     {
         id: 'describeme',
         title: 'DescribeMe',
-        description: 'Chrome extension for web accessibility.',
-        link: 'https://chromewebstore.google.com',
-        tags: ['Chrome Extension', 'Accessibility'],
-        color: 'bg-green-500/5',
+        description: 'AI captions tailored to the mood and moment! From Gen Z to cutesy vibes.',
+        link: 'https://apps.apple.com/gb/app/describeme-caption-app/id6740031053',
+        tags: ['iOS', 'AI', 'Social'],
+        color: 'bg-blue-500/5',
         assets: null,
     },
 ];
@@ -133,7 +134,7 @@ export const Projects: React.FC = () => {
                     <section 
                         key={index} 
                         id={project.id} 
-                        className={project.id === 'apple' || project.id === 'mental-mamba' || project.id === 'stage' ? '' : 'scroll-mt-32'}
+                        className={project.id === 'apple' || project.id === 'mental-mamba' || project.id === 'stage' || project.id === 'describeme' ? '' : 'scroll-mt-32'}
                     >
                         {project.id === 'apple' ? (
                             <AppleMagicBento />
@@ -141,6 +142,8 @@ export const Projects: React.FC = () => {
                             <MentalMambaProject />
                         ) : project.id === 'stage' ? (
                             <StageProject />
+                        ) : project.id === 'describeme' ? (
+                            <DescribeMeProject />
                         ) : (
                             <ProjectCard project={project} index={index} />
                         )}
