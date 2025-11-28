@@ -5,6 +5,7 @@ import { AppleMagicBento } from './AppleProject';
 import { MentalMambaProject } from './MentalMambaProject';
 import { StageProject } from './StageProject';
 import { DescribeMeProject } from './DescribeMeProject';
+import { KulinaryProject } from './KulinaryProject';
 
 // Import Mental Mamba Assets
 import mmLogo from '../assets/project_assets/mental_mamba/heart-logo.svg';
@@ -48,7 +49,7 @@ export const projects = [
         title: 'Kulinary',
         description: 'Chrome extension for culinary discovery and exploration.',
         link: 'https://chromewebstore.google.com/detail/kulinary/mpjdadlofjgdhlaocbdjohlmmffekpan?hl=en-GB',
-        tags: ['Chrome Extension', 'Discovery'],
+        tags: ['Chrome Extension', 'React', 'Utility'],
         color: 'bg-green-500/5',
         assets: null,
     },
@@ -126,7 +127,7 @@ export const Projects: React.FC = () => {
                 viewport={{ once: true }}
                 className="text-5xl md:text-6xl font-bold mb-20 tracking-tight"
             >
-                Selected Work
+                Recent Work
             </motion.h2>
 
             <div className="flex flex-col gap-32">
@@ -134,7 +135,7 @@ export const Projects: React.FC = () => {
                     <section 
                         key={index} 
                         id={project.id} 
-                        className={project.id === 'apple' || project.id === 'mental-mamba' || project.id === 'stage' || project.id === 'describeme' ? '' : 'scroll-mt-32'}
+                        className={project.id === 'apple' || project.id === 'mental-mamba' || project.id === 'stage' || project.id === 'describeme' ? '' : 'scroll-mt-48'}
                     >
                         {project.id === 'apple' ? (
                             <AppleMagicBento />
@@ -144,6 +145,8 @@ export const Projects: React.FC = () => {
                             <StageProject />
                         ) : project.id === 'describeme' ? (
                             <DescribeMeProject />
+                        ) : project.id === 'kulinary' ? (
+                            <KulinaryProject />
                         ) : (
                             <ProjectCard project={project} index={index} />
                         )}

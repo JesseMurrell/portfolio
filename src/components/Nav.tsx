@@ -7,7 +7,7 @@ export const Nav: React.FC = () => {
         { id: 'home', label: 'Home' },
         {
             id: 'projects',
-            label: 'Projects',
+            label: 'Recent Work',
             subItems: projects.map(p => ({ id: p.id, label: p.title }))
         },
         { id: 'contact', label: 'Contact' },
