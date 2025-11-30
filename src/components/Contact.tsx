@@ -122,7 +122,7 @@ export const Contact: React.FC = () => {
                         
                         <div className="space-y-4">
                             <SocialCard
-                                title="Curriculum Vitae"
+                                title="CV"
                                 description="Download my full professional history, including detailed case studies."
                                 icon={FileText}
                                 href="/assets/(12) Jesse Murrell | LinkedIn.pdf"

@@ -125,10 +125,20 @@ export const Projects: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-5xl md:text-6xl font-bold mb-20 tracking-tight"
+                className="text-5xl md:text-6xl font-bold mb-6 tracking-tight"
             >
                 Recent Work
             </motion.h2>
+
+            <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-xl text-secondary mb-20 max-w-2xl"
+            >
+                Roles, Businesses and Projects from the last 4 years. For more, <a href="#contact" className="text-primary hover:text-white transition-colors">contact me or check out my CV</a>.
+            </motion.p>
 
             <div className="flex flex-col gap-32">
                 {projects.map((project, index) => (
