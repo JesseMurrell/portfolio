@@ -9,7 +9,7 @@ function App() {
   return (
     <Layout>
       <Nav />
-      <div className="lg:pl-32">
+      <div className="w-full lg:pl-32">
         <Hero />
         <Projects />
         <Contact />

@@ -76,7 +76,7 @@ export const StageProject: React.FC = () => {
             <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                className="mb-4 ml-2"
+                className="mb-4 text-center lg:text-left lg:ml-2"
             >
                 <span className="text-sm font-medium text-blue-400 tracking-wide uppercase">Contract Role</span>
             </motion.div>
@@ -84,12 +84,12 @@ export const StageProject: React.FC = () => {
             <div className="bg-white/80 dark:bg-[#0a0a0a] rounded-4xl border border-black/5 dark:border-white/5 relative">
                 <div className="flex flex-col lg:flex-row">
                     {/* Left Content Section - Sticky */}
-                    <div className="lg:w-1/2 p-10 md:p-20 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center z-10">
+                    <div className="lg:w-1/2 p-6 md:p-20 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center z-10 text-center lg:text-left items-center lg:items-start w-full">
                         <motion.div 
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="flex flex-wrap gap-4 mb-8"
+                            className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8"
                         >
                         <span className="px-4 py-1.5 text-sm font-medium rounded-full bg-black/5 dark:bg-white/10 text-gray-700 dark:text-white/80 border border-black/5 dark:border-white/5">
                             Head of Platform
@@ -117,7 +117,7 @@ export const StageProject: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="space-y-6 text-lg md:text-xl text-gray-600 dark:text-white/70 leading-relaxed max-w-xl"
+                        className="space-y-6 text-lg md:text-xl text-gray-600 dark:text-white/70 leading-relaxed max-w-xl w-full mx-auto lg:mx-0"
                     >
                         <p>
                             I joined Stage as Engineering Manager to deliver AI/ML services. After meeting every milestone and successfully achieving Stage's Innovate UK obligations, I was quickly promoted to Head of Platform, leading the AI/ML, 
@@ -130,7 +130,7 @@ export const StageProject: React.FC = () => {
                             <p className="mb-6 text-gray-500 dark:text-white/50 text-sm uppercase tracking-widest font-medium">
                                 Responsible for all AI/ML service delivery across:
                             </p>
-                            <div className="flex flex-wrap items-center gap-8">
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-8">
                                 {properties.map((prop) => (
                                     <a 
                                         key={prop.name}
