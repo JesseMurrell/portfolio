@@ -6,6 +6,11 @@ interface LayoutProps {
     children: React.ReactNode;
 }
 
+export const ThemeContext = React.createContext({
+    isDark: false,
+    toggleTheme: () => {},
+});
+
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
     const [isDark, setIsDark] = useState(false);
 
@@ -32,18 +37,20 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     };
 
     return (
-        <div className="min-h-screen text-foreground transition-colors duration-300 relative">
-            <DotGridBackground />
-            <button
-                onClick={toggleTheme}
-                className="fixed top-6 right-6 z-50 p-2 rounded-full glass hover:bg-white/20 transition-all"
-                aria-label="Toggle theme"
-            >
-                {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <main className="container mx-auto px-4 py-8 md:py-12 lg:px-8 relative z-10">
-                {children}
-            </main>
-        </div>
+        <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+            <div className="min-h-screen text-foreground transition-colors duration-300 relative">
+                <DotGridBackground />
+                <button
+                    onClick={toggleTheme}
+                    className="fixed top-6 right-6 z-50 p-2 rounded-full glass hover:bg-white/20 transition-all hidden lg:block"
+                    aria-label="Toggle theme"
+                >
+                    {isDark ? <Sun size={20} /> : <Moon size={20} />}
+                </button>
+                <main className="container mx-auto px-4 py-8 md:py-12 lg:px-8 relative z-10">
+                    {children}
+                </main>
+            </div>
+        </ThemeContext.Provider>
     );
 };
