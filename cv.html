@@ -1,477 +1,476 @@
-     1|<!DOCTYPE html>
-     2|<html lang="en">
-     3|<head>
-     4|    <meta charset="UTF-8">
-     5|    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     6|    <title>Jesse Murrell - Resume</title>
-     7|    <base href="/portfolio/">
-     8|    <style>
-     9|        /* APPLE DESIGN SYSTEM VARIABLES */
-    10|        :root {
-    11|            --bg-color: #ffffff;
-    12|            --text-primary: #1d1d1f; /* Apple's near-black */
-    13|            --text-secondary: #86868b; /* Apple's dark gray */
-    14|            --link-blue: #0066cc; /* Apple's interaction blue */
-    15|            --divider: #d2d2d7; /* Apple's light gray divider */
-    16|            --section-width: 980px;
-    17|        }
-    18|
-    19|        * {
-    20|            box-sizing: border-box;
-    21|            margin: 0;
-    22|            padding: 0;
-    23|            -webkit-font-smoothing: antialiased;
-    24|        }
-    25|
-    26|        body {
-    27|            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    28|            background: var(--bg-color);
-    29|            color: var(--text-primary);
-    30|            line-height: 1.5;
-    31|            font-size: 14px;
-    32|            max-width: var(--section-width);
-    33|            margin: 0 auto;
-    34|            padding: 60px 40px;
-    35|        }
-    36|
-    37|        /* --- HEADER --- */
-    38|        header {
-    39|            padding-bottom: 60px;
-    40|            border-bottom: 1px solid var(--divider);
-    41|            margin-bottom: 50px;
-    42|        }
-    43|
-    44|        h1 {
-    45|            font-size: 48px;
-    46|            font-weight: 600; /* Apple uses semibold for headers usually */
-    47|            letter-spacing: -0.02em;
-    48|            margin-bottom: 10px;
-    49|            color: var(--text-primary);
-    50|        }
-    51|
-    52|        .subtitle {
-    53|            font-size: 21px;
-    54|            font-weight: 400;
-    55|            color: var(--text-secondary);
-    56|            margin-bottom: 30px;
-    57|        }
-    58|
-    59|        .contact-bar {
-    60|            font-size: 14px;
-    61|            font-weight: 500;
-    62|        }
-    63|
-    64|        .contact-bar a {
-    65|            color: var(--link-blue);
-    66|            text-decoration: none;
-    67|            margin-right: 20px;
-    68|        }
-    69|        
-    70|        .contact-bar a:hover {
-    71|            text-decoration: underline;
-    72|        }
-    73|
-    74|        .contact-bar span {
-    75|            color: var(--text-secondary);
-    76|            margin-right: 20px;
-    77|        }
-    78|
-    79|        /* --- GRID LAYOUT --- */
-    80|        .section {
-    81|            display: grid;
-    82|            grid-template-columns: 240px 1fr; /* The "Specs" Layout */
-    83|            gap: 40px;
-    84|            margin-bottom: 60px;
-    85|        }
-    86|
-    87|        .section-label {
-    88|            font-size: 12px;
-    89|            font-weight: 600;
-    90|            text-transform: uppercase;
-    91|            letter-spacing: 0.05em;
-    92|            color: var(--text-primary);
-    93|            padding-top: 4px; /* Align with top of body text */
-    94|        }
-    95|
-    96|        /* --- CONTENT TYPOGRAPHY --- */
-    97|        .job-group {
-    98|            display: flex;
-    99|            gap: 24px;
-   100|            margin-bottom: 40px;
-   101|        }
-   102|
-   103|        .logo-container {
-   104|            width: 48px;
-   105|            height: 48px;
-   106|            flex-shrink: 0;
-   107|            display: flex;
-   108|            align-items: flex-start;
-   109|            justify-content: center;
-   110|        }
-   111|
-   112|        .company-logo {
-   113|            width: 100%;
-   114|            height: 100%;
-   115|            object-fit: contain;
-   116|            border-radius: 8px;
-   117|        }
-   118|
-   119|        .invert-logo {
-   120|            filter: invert(1);
-   121|        }
-   122|
-   123|        .job-content {
-   124|            flex: 1;
-   125|            min-width: 0;
-   126|        }
-   127|
-   128|        .job-title {
-   129|            font-size: 17px;
-   130|            font-weight: 600;
-   131|            color: var(--text-primary);
-   132|            margin-bottom: 2px;
-   133|        }
-   134|
-   135|        .ex-apple-badge {
-   136|            display: inline-block;
-   137|            vertical-align: middle;
-   138|            font-size: 12px;
-   139|            font-weight: 600;
-   140|            letter-spacing: 0.02em;
-   141|            color: #ffffff;
-   142|            background-color: #1d1d1f;
-   143|            padding: 4px 12px;
-   144|            border-radius: 999px;
-   145|            margin-left: 12px;
-   146|            position: relative;
-   147|            top: -2px; /* Visual optical adjustment */
-   148|        }
-   149|
-   150|        .company-name {
-   151|            font-size: 17px;
-   152|            font-weight: 400;
-   153|            color: var(--text-secondary);
-   154|            margin-bottom: 15px;
-   155|        }
-   156|
-   157|        .date-range {
-   158|            display: block;
-   159|            font-size: 12px;
-   160|            color: var(--text-secondary);
-   161|            margin-top: 4px;
-   162|            margin-bottom: 10px;
-   163|        }
-   164|
-   165|        p, li {
-   166|            font-size: 15px;
-   167|            color: #424245; /* Slightly softer than pure black for body */
-   168|            line-height: 1.6;
-   169|        }
-   170|        
-   171|        .summary-text {
-   172|            font-size: 19px; /* Large intro text like Apple product pages */
-   173|            line-height: 1.4;
-   174|            font-weight: 400;
-   175|            color: var(--text-primary);
-   176|        }
-   177|
-   178|        ul {
-   179|            list-style: none;
-   180|            margin-top: 10px;
-   181|        }
-   182|
-   183|        li {
-   184|            position: relative;
-   185|            padding-left: 18px;
-   186|            margin-bottom: 8px;
-   187|        }
-   188|
-   189|        li::before {
-   190|            content: "•";
-   191|            position: absolute;
-   192|            left: 0;
-   193|            color: var(--text-secondary);
-   194|        }
-   195|
-   196|        /* --- SKILLS GRID --- */
-   197|        .skills-grid {
-   198|            display: grid;
-   199|            grid-template-columns: 1fr 1fr;
-   200|            gap: 20px;
-   201|        }
-   202|
-   203|        .skill-category {
-   204|            margin-bottom: 20px;
-   205|        }
-   206|
-   207|        .skill-cat-title {
-   208|            font-size: 13px;
-   209|            font-weight: 600;
-   210|            color: var(--text-secondary);
-   211|            margin-bottom: 8px;
-   212|            border-bottom: 1px solid #efeff0;
-   213|            padding-bottom: 5px;
-   214|        }
-   215|
-   216|        .skill-list {
-   217|            font-size: 14px;
-   218|            color: var(--text-primary);
-   219|            line-height: 1.6;
-   220|        }
-   221|
-   222|        /* --- APP HIGHLIGHT --- */
-   223|        .app-box {
-   224|            background: #fbfbfd;
-   225|            border-radius: 12px;
-   226|            padding: 24px;
-   227|            border: 1px solid #d2d2d7;
-   228|            margin-bottom: 20px;
-   229|        }
-   230|
-   231|        .venture-header {
-   232|            display: flex;
-   233|            align-items: flex-start;
-   234|            gap: 16px;
-   235|            margin-bottom: 12px;
-   236|        }
-   237|
-   238|        .venture-logo {
-   239|            width: 40px;
-   240|            height: 40px;
-   241|            border-radius: 14px;
-   242|            overflow: hidden;
-   243|            background: #f5f5f7;
-   244|            display: flex;
-   245|            align-items: center;
-   246|            justify-content: center;
-   247|            margin-top: 2px; /* small optical tweak to match text cap height */
-   248|        }
-   249|
-   250|        .venture-logo img {
-   251|            width: 100%;
-   252|            height: 100%;
-   253|            object-fit: cover;
-   254|        }
-   255|        
-   256|        .app-link {
-   257|            font-size: 13px;
-   258|            font-weight: 600;
-   259|            color: var(--link-blue);
-   260|            text-decoration: none;
-   261|        }
-   262|
-   263|        /* --- PRINT OPTIMIZATIONS --- */
-   264|        @media print {
-   265|            body { 
-   266|                padding: 40px; 
-   267|                max-width: 100%;
-   268|            }
-   269|            .section {
-   270|                page-break-inside: avoid;
-   271|            }
-   272|            a { text-decoration: none; color: #000; }
-   273|        }
-   274|    </style>
-   275|</head>
-   276|<body>
-   277|
-   278|    <header>
-   279|        <h1>Jesse Murrell</h1>
-   280|        <div class="subtitle">Head of Platform @ Stage <span class="ex-apple-badge">Ex-Apple (Apple Pay)</span></div>
-   281|        <!--  -->
-   282|        <div class="contact-bar">
-   283|            <span>London, UK | Manchester, UK  | Remote </span>
-   284|            <a href="mailto:jesse.k.murrell@hotmail.com">jesse.k.murrell@hotmail.com</a>
-   285|            <a href="https://www.linkedin.com/in/jesse-murrell">LinkedIn Profile</a>
-   286|        </div>
-   287|    </header>
-   288|
-   289|    <!-- SUMMARY SECTION -->
-   290|    <div class="section">
-   291|        <div class="section-label">Summary</div>
-   292|        <div>
-   293|            <p class="summary-text">
-   294|                Engineering leader and product builder focused on shipping meaningful technology. I’ve designed, led, and delivered platforms that serve hundreds of millions of users. I build high‑performing teams and systems that turn complex AI, data, cloud, and infrastructure challenges into simple, impactful products and experiences.
-   295|            </p>
-   296|        </div>
-   297|    </div>
-   298|
-   299|    <!-- EXPERIENCE SECTION -->
-   300|    <div class="section">
-   301|        <div class="section-label">Experience</div>
-   302|        <div>
-   303|            <!-- STAGE -->
-   304|            <div class="job-group">
-   305|                <div class="logo-container">
-   306|                    <img src="assets/stage-logo.png" class="company-logo invert-logo" alt="Stage Logo">
-   307|                </div>
-   308|                <div class="job-content">
-   309|                    <div class="job-title">Head of Platform</div>
-   310|                    <div class="company-name">Stage <span class="date-range">Apr 2025 – Present</span></div>
-   311|                    <p>Promoted rapidly from Engineering Manager to lead the strategic technical direction of the Platform division. Responsible for the technical backbone serving Stage, <a href="https://salt.music" style="color:var(--link-blue)">Salt</a>, <a href="https://www.sessionstudio.com" style="color:var(--link-blue)">Session</a>, and <a href="https://www.connex.music" style="color:var(--link-blue)">Connex</a>.</p>
-   312|                    <ul>
-   313|                        <li>Owned the roadmap and delivery for the AI/ML, Data Platform, and Cloud Ops teams.</li>
-   314|                        <li>Led infrastructure delivery for <strong>Connex</strong>, a B2B layer adopted by Universal Music Group to streamline royalty management.</li>
-   315|                        <li>Modernized cloud operations across AWS and GCP, reducing infrastructure costs while improving uptime for global collaboration tools.</li>
-   316|                    </ul>
-   317|                </div>
-   318|            </div>
-   319|
-   320|            <div class="job-group">
-   321|                <div class="logo-container">
-   322|                    <img src="assets/stage-logo.png" class="company-logo invert-logo" alt="Stage Logo">
-   323|                </div>
-   324|                <div class="job-content">
-   325|                    <div class="job-title">AI & ML Engineering Manager</div>
-   326|                    <div class="company-name">Stage <span class="date-range">Jun 2024 – Apr 2025</span></div>
-   327|                    <ul>
-   328|                        <li>Built and deployed foundational AI/ML services to automate metadata tagging, significantly increasing data value.</li>
-   329|                        <li>Scaled cross-functional squads of engineers and data scientists.</li>
-   330|                    </ul>
-   331|                </div>
-   332|            </div>
-   333|
-   334|            <!-- APPLE -->
-   335|            <div class="job-group">
-   336|                <div class="logo-container">
-   337|                    <img src="assets/apple.svg" class="company-logo" alt="Apple Logo">
-   338|                </div>
-   339|                <div class="job-content">
-   340|                    <div class="job-title">Lead Data Engineer (Apple Pay / Wallet)</div>
-   341|                    <div class="company-name">Apple <span class="date-range">Mar 2022 – Jun 2024</span></div>
-   342|                    <ul>
-   343|                        <li>Designed and deployed the comprehensive data platform for WPC (Wallet, Payments, Commerce) used by millions globally.</li>
-   344|                        <li>Served as the technical lead integrating <strong>Credit Kudos</strong> technology into the Apple ecosystem following acquisition.</li>
-   345|                        <li>Managed a dynamic team of 10+ contractors and engineers, migrating legacy systems to internal Apple cloud tech.</li>
-   346|                    </ul>
-   347|                </div>
-   348|            </div>
-   349|
-   350|            <!-- CREDIT KUDOS -->
-   351|            <div class="job-group">
-   352|                <div class="logo-container">
-   353|                    <img src="assets/Credit-kudos-logo-1.png" class="company-logo" alt="Credit Kudos Logo">
-   354|                </div>
-   355|                <div class="job-content">
-   356|                    <div class="job-title">Senior Data Engineer</div>
-   357|                    <div class="company-name">Credit Kudos (Acquired by Apple) <span class="date-range">May 2021 – Mar 2022</span></div>
-   358|                    <ul>
-   359|                        <li>Played a pivotal role in technical due diligence and architectural cleanup facilitating the successful acquisition by Apple.</li>
-   360|                        <li>Architected the backbone for ML and BI initiatives using Terraform and GoLang.</li>
-   361|                    </ul>
-   362|                </div>
-   363|            </div>
-   364|
-   365|            <!-- STINT -->
-   366|            <div class="job-group">
-   367|                <div class="logo-container">
-   368|                    <img src="assets/stint_logo.svg" class="company-logo" alt="Stint Logo">
-   369|                </div>
-   370|                <div class="job-content">
-   371|                    <div class="job-title">Platform Data Engineer</div>
-   372|                    <div class="company-name">Stint <span class="date-range">Jun 2020 – May 2021</span></div>
-   373|                    <ul>
-   374|                        <li>Built a comprehensive data lake via S3/Athena/Redshift, unifying data from HubSpot, GA, and app metrics.</li>
-   375|                    </ul>
-   376|                </div>
-   377|            </div>
-   378|        </div>
-   379|    </div>
-   380|
-   381|    <!-- VENTURES SECTION -->
-   382|    <div class="section">
-   383|        <div class="section-label">Ventures</div>
-   384|        <div>
-   385|            <div class="app-box">
-   386|                <div class="venture-header">
-   387|                    <div class="venture-logo">
-   388|                        <img src="assets/heart-logo.svg" alt="Mental Mamba Logo">
-   389|                    </div>
-   390|                    <div>
-   391|                        <div class="job-title">Mental Mamba</div>
-   392|                        <div class="company-name">Solo Founder</div>
-   393|                    </div>
-   394|                </div>
-   395|                <p style="margin-bottom:10px;">Designed and developed a focus and mental health application for iOS using SwiftUI.</p>
-   396|                <a href="https://apps.apple.com/gb/app/mental-mamba/id6743010712" class="app-link" target="_blank">View on App Store ↗</a>
-   397|            </div>
-   398|            
-   399|            <div class="app-box">
-   400|                <div class="venture-header">
-   401|                    <div class="venture-logo">
-   402|                        <img src="assets/describe-me-app-logo.png" alt="DescribeMe Logo">
-   403|                    </div>
-   404|                    <div>
-   405|                        <div class="job-title">DescribeMe</div>
-   406|                        <div class="company-name">Solo Founder</div>
-   407|                    </div>
-   408|                </div>
-   409|                <p style="margin-bottom:10px;">AI captions tailored to the mood and moment! From Gen Z and ancient energy to cutesy vibes, DescribeMe captions your photos with unique, personalised captions.</p>
-   410|                <a href="https://apps.apple.com/gb/app/describeme-caption-app/id6740031053" class="app-link" target="_blank">View on App Store ↗</a>
-   411|            </div>
-   412|        </div>
-   413|    </div>
-   414|
-   415|    <!-- SKILLS SECTION -->
-   416|    <div class="section">
-   417|        <div class="section-label">Tech Specs</div>
-   418|        <div class="skills-grid">
-   419|            <div class="skill-category">
-   420|                <div class="skill-cat-title">Core Languages</div>
-   421|                <div class="skill-list">
-   422|                    Python, GoLang, Swift (SwiftUI),<br>
-   423|                    TypeScript, SQL, Java
-   424|                </div>
-   425|            </div>
-   426|            <div class="skill-category">
-   427|                <div class="skill-cat-title">Cloud & Infrastructure</div>
-   428|                <div class="skill-list">
-   429|                    AWS (Lambda, DynamoDB), GCP,<br>
-   430|                    Terraform, Kubernetes, Docker
-   431|                </div>
-   432|            </div>
-   433|            <div class="skill-category">
-   434|                <div class="skill-cat-title">Data & AI</div>
-   435|                <div class="skill-list">
-   436|                    Kafka, Airflow, DBT, Pandas,<br>
-   437|                    Scikit-learn, ML Product Strategy
-   438|                </div>
-   439|            </div>
-   440|            <div class="skill-category">
-   441|                <div class="skill-cat-title">Leadership</div>
-   442|                <div class="skill-list">
-   443|                    Engineering Management (15+ reports),<br>
-   444|                    M&A Tech Integration, FinOps, Agile
-   445|                </div>
-   446|            </div>
-   447|        </div>
-   448|    </div>
-   449|
-   450|    <!-- EDUCATION SECTION -->
-   451|    <div class="section" style="border-bottom: none;">
-   452|        <div class="section-label">Education</div>
-   453|        <div>
-   454|            <div class="job-group" style="margin-bottom: 25px;">
-   455|                <div class="job-content">
-   456|                    <div class="job-title">MSc Economics and Finance</div>
-   457|                    <div class="company-name">University of York <span class="date-range">2014 – 2015</span></div>
-   458|                </div>
-   459|            </div>
-   460|            <div class="job-group">
-   461|                <div class="job-content">
-   462|                    <div class="job-title">BSc Financial Mathematics (First Class)</div>
-   463|                    <div class="company-name">Middlesex University <span class="date-range">2011 – 2014</span></div>
-   464|                </div>
-   465|            </div>
-   466|            
-   467|            <div class="job-title" style="font-size: 14px; margin-top: 30px;">Certifications</div>
-   468|            <ul style="margin-top: 5px;">
-   469|                <li>Google Professional Data Engineer</li>
-   470|                <li>Google IT Automation with Python</li>
-   471|            </ul>
-   472|        </div>
-   473|    </div>
-   474|
-   475|</body>
-   476|</html>
-   477|
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesse Murrell - Resume</title>
+    <!-- Inline CSS for GitHub Pages compatibility without separate stylesheet -->
+    <style>
+        /* APPLE DESIGN SYSTEM VARIABLES */
+        :root {
+            --bg-color: #ffffff;
+            --text-primary: #1d1d1f; /* Apple's near-black */
+            --text-secondary: #86868b; /* Apple's dark gray */
+            --link-blue: #0066cc; /* Apple's interaction blue */
+            --divider: #d2d2d7; /* Apple's light gray divider */
+            --section-width: 980px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            font-size: 14px;
+            max-width: var(--section-width);
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding-bottom: 60px;
+            border-bottom: 1px solid var(--divider);
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600; /* Apple uses semibold for headers usually */
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            font-size: 21px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .contact-bar {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .contact-bar a {
+            color: var(--link-blue);
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        .contact-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-bar span {
+            color: var(--text-secondary);
+            margin-right: 20px;
+        }
+
+        /* --- GRID LAYOUT --- */
+        .section {
+            display: grid;
+            grid-template-columns: 240px 1fr; /* The "Specs" Layout */
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            padding-top: 4px; /* Align with top of body text */
+        }
+
+        /* --- CONTENT TYPOGRAPHY --- */
+        .job-group {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .logo-container {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .company-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .invert-logo {
+            filter: invert(1);
+        }
+
+        .job-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .job-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .ex-apple-badge {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #ffffff;
+            background-color: #1d1d1f;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-left: 12px;
+            position: relative;
+            top: -2px; /* Visual optical adjustment */
+        }
+
+        .company-name {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .date-range {
+            display: block;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 15px;
+            color: #424245; /* Slightly softer than pure black for body */
+            line-height: 1.6;
+        }
+        
+        .summary-text {
+            font-size: 19px; /* Large intro text like Apple product pages */
+            line-height: 1.4;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--text-secondary);
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-cat-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            border-bottom: 1px solid #efeff0;
+            padding-bottom: 5px;
+        }
+
+        .skill-list {
+            font-size: 14px;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* --- APP HIGHLIGHT --- */
+        .app-box {
+            background: #fbfbfd;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #d2d2d7;
+            margin-bottom: 20px;
+        }
+
+        .venture-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .venture-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f5f5f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px; /* small optical tweak to match text cap height */
+        }
+
+        .venture-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .app-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--link-blue);
+            text-decoration: none;
+        }
+
+        /* --- PRINT OPTIMIZATIONS --- */
+        @media print {
+            body { 
+                padding: 40px; 
+                max-width: 100%;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+            a { text-decoration: none; color: #000; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jesse Murrell</h1>
+        <div class="subtitle">Head of Platform @ Stage <span class="ex-apple-badge">Ex-Apple (Apple Pay)</span></div>
+        <!--  -->
+        <div class="contact-bar">
+            <span>London, UK | Manchester, UK  | Remote </span>
+            <a href="mailto:jesse.k.murrell@hotmail.com">jesse.k.murrell@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/jesse-murrell">LinkedIn Profile</a>
+        </div>
+    </header>
+
+    <!-- SUMMARY SECTION -->
+    <div class="section">
+        <div class="section-label">Summary</div>
+        <div>
+            <p class="summary-text">
+                Engineering leader and product builder focused on shipping meaningful technology. I’ve designed, led, and delivered platforms that serve hundreds of millions of users. I build high‑performing teams and systems that turn complex AI, data, cloud, and infrastructure challenges into simple, impactful products and experiences.
+            </p>
+        </div>
+    </div>
+
+    <!-- EXPERIENCE SECTION -->
+    <div class="section">
+        <div class="section-label">Experience</div>
+        <div>
+            <!-- STAGE -->
+            <div class="job-group">
+                <div class="logo-container">
+                    <img src="assets/stage-logo.png" class="company-logo invert-logo" alt="Stage Logo">
+                </div>
+                <div class="job-content">
+                    <div class="job-title">Head of Platform</div>
+                    <div class="company-name">Stage <span class="date-range">Apr 2025 – Present</span></div>
+                    <p>Promoted rapidly from Engineering Manager to lead the strategic technical direction of the Platform division. Responsible for the technical backbone serving Stage, <a href="https://salt.music" style="color:var(--link-blue)">Salt</a>, <a href="https://www.sessionstudio.com" style="color:var(--link-blue)">Session</a>, and <a href="https://www.connex.music" style="color:var(--link-blue)">Connex</a>.</p>
+                    <ul>
+                        <li>Owned the roadmap and delivery for the AI/ML, Data Platform, and Cloud Ops teams.</li>
+                        <li>Led infrastructure delivery for <strong>Connex</strong>, a B2B layer adopted by Universal Music Group to streamline royalty management.</li>
+                        <li>Modernized cloud operations across AWS and GCP, reducing infrastructure costs while improving uptime for global collaboration tools.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-group">
+                <div class="logo-container">
+                    <img src="assets/stage-logo.png" class="company-logo invert-logo" alt="Stage Logo">
+                </div>
+                <div class="job-content">
+                    <div class="job-title">AI & ML Engineering Manager</div>
+                    <div class="company-name">Stage <span class="date-range">Jun 2024 – Apr 2025</span></div>
+                    <ul>
+                        <li>Built and deployed foundational AI/ML services to automate metadata tagging, significantly increasing data value.</li>
+                        <li>Scaled cross-functional squads of engineers and data scientists.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- APPLE -->
+            <div class="job-group">
+                <div class="logo-container">
+                    <img src="assets/apple.svg" class="company-logo" alt="Apple Logo">
+                </div>
+                <div class="job-content">
+                    <div class="job-title">Lead Data Engineer (Apple Pay / Wallet)</div>
+                    <div class="company-name">Apple <span class="date-range">Mar 2022 – Jun 2024</span></div>
+                    <ul>
+                        <li>Designed and deployed the comprehensive data platform for WPC (Wallet, Payments, Commerce) used by millions globally.</li>
+                        <li>Served as the technical lead integrating <strong>Credit Kudos</strong> technology into the Apple ecosystem following acquisition.</li>
+                        <li>Managed a dynamic team of 10+ contractors and engineers, migrating legacy systems to internal Apple cloud tech.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CREDIT KUDOS -->
+            <div class="job-group">
+                <div class="logo-container">
+                    <img src="assets/Credit-kudos-logo-1.png" class="company-logo" alt="Credit Kudos Logo">
+                </div>
+                <div class="job-content">
+                    <div class="job-title">Senior Data Engineer</div>
+                    <div class="company-name">Credit Kudos (Acquired by Apple) <span class="date-range">May 2021 – Mar 2022</span></div>
+                    <ul>
+                        <li>Played a pivotal role in technical due diligence and architectural cleanup facilitating the successful acquisition by Apple.</li>
+                        <li>Architected the backbone for ML and BI initiatives using Terraform and GoLang.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- STINT -->
+            <div class="job-group">
+                <div class="logo-container">
+                    <img src="assets/stint_logo.svg" class="company-logo" alt="Stint Logo">
+                </div>
+                <div class="job-content">
+                    <div class="job-title">Platform Data Engineer</div>
+                    <div class="company-name">Stint <span class="date-range">Jun 2020 – May 2021</span></div>
+                    <ul>
+                        <li>Built a comprehensive data lake via S3/Athena/Redshift, unifying data from HubSpot, GA, and app metrics.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VENTURES SECTION -->
+    <div class="section">
+        <div class="section-label">Ventures</div>
+        <div>
+            <div class="app-box">
+                <div class="venture-header">
+                    <div class="venture-logo">
+                        <img src="assets/heart-logo.svg" alt="Mental Mamba Logo">
+                    </div>
+                    <div>
+                        <div class="job-title">Mental Mamba</div>
+                        <div class="company-name">Solo Founder</div>
+                    </div>
+                </div>
+                <p style="margin-bottom:10px;">Designed and developed a focus and mental health application for iOS using SwiftUI.</p>
+                <a href="https://apps.apple.com/gb/app/mental-mamba/id6743010712" class="app-link" target="_blank">View on App Store ↗</a>
+            </div>
+            
+            <div class="app-box">
+                <div class="venture-header">
+                    <div class="venture-logo">
+                        <img src="assets/describe-me-app-logo.png" alt="DescribeMe Logo">
+                    </div>
+                    <div>
+                        <div class="job-title">DescribeMe</div>
+                        <div class="company-name">Solo Founder</div>
+                    </div>
+                </div>
+                <p style="margin-bottom:10px;">AI captions tailored to the mood and moment! From Gen Z and ancient energy to cutesy vibes, DescribeMe captions your photos with unique, personalised captions.</p>
+                <a href="https://apps.apple.com/gb/app/describeme-caption-app/id6740031053" class="app-link" target="_blank">View on App Store ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SKILLS SECTION -->
+    <div class="section">
+        <div class="section-label">Tech Specs</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-cat-title">Core Languages</div>
+                <div class="skill-list">
+                    Python, GoLang, Swift (SwiftUI),<br>
+                    TypeScript, SQL, Java
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-cat-title">Cloud & Infrastructure</div>
+                <div class="skill-list">
+                    AWS (Lambda, DynamoDB), GCP,<br>
+                    Terraform, Kubernetes, Docker
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-cat-title">Data & AI</div>
+                <div class="skill-list">
+                    Kafka, Airflow, DBT, Pandas,<br>
+                    Scikit-learn, ML Product Strategy
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-cat-title">Leadership</div>
+                <div class="skill-list">
+                    Engineering Management (15+ reports),<br>
+                    M&A Tech Integration, FinOps, Agile
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDUCATION SECTION -->
+    <div class="section" style="border-bottom: none;">
+        <div class="section-label">Education</div>
+        <div>
+            <div class="job-group" style="margin-bottom: 25px;">
+                <div class="job-content">
+                    <div class="job-title">MSc Economics and Finance</div>
+                    <div class="company-name">University of York <span class="date-range">2014 – 2015</span></div>
+                </div>
+            </div>
+            <div class="job-group">
+                <div class="job-content">
+                    <div class="job-title">BSc Financial Mathematics (First Class)</div>
+                    <div class="company-name">Middlesex University <span class="date-range">2011 – 2014</span></div>
+                </div>
+            </div>
+            
+            <div class="job-title" style="font-size: 14px; margin-top: 30px;">Certifications</div>
+            <ul style="margin-top: 5px;">
+                <li>Google Professional Data Engineer</li>
+                <li>Google IT Automation with Python</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
