@@ -58,6 +58,7 @@ export const Contact: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
+                    className="order-last lg:order-0"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's work together</h2>
                     <p className="text-xl text-secondary mb-8">
@@ -112,7 +113,7 @@ export const Contact: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="space-y-8 lg:border-l lg:border-white/5 lg:pl-12"
+                    className="space-y-8 lg:border-l lg:border-white/5 lg:pl-12 order-first lg:order-0"
                 >
                     <div>
                         <h3 className="text-4xl md:text-5xl font-bold mb-6">Want to learn more?</h3>

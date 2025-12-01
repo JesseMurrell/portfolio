@@ -19,7 +19,16 @@ const splitTextVariants = {
 
 export const Hero: React.FC = () => {
     const title = "Hello, I'm Jesse";
-    const letters = title.split('');
+    
+    // Pre-calculate structure with global indices for smooth stagger
+    let globalCharIndex = 0;
+    const words = title.split(' ').map(word => {
+        const chars = word.split('').map(char => ({
+            char,
+            index: globalCharIndex++
+        }));
+        return { word, chars };
+    });
 
     const { scrollY } = useScroll();
     const scale = useTransform(scrollY, [0, 500], [1, 0.9]);
@@ -30,20 +39,24 @@ export const Hero: React.FC = () => {
         <section id="home" className="min-h-screen flex flex-col relative overflow-hidden pt-20">
             <motion.div
                 style={{ scale, opacity, y }}
-                className="z-10 container mx-auto px-4 lg:px-8 flex-grow flex flex-col justify-center"
+                className="z-10 container mx-auto px-4 lg:px-8 flex-grow flex flex-col justify-center text-center lg:text-left items-center lg:items-start"
             >
-                <h1 className="text-7xl md:text-9xl font-bold mb-8 flex flex-wrap tracking-tight">
-                    {letters.map((char, index) => (
-                        <motion.span
-                            key={index}
-                            custom={index}
-                            initial="hidden"
-                            animate="visible"
-                            variants={splitTextVariants}
-                            className={char === ' ' ? 'mr-6' : ''}
-                        >
-                            {char}
-                        </motion.span>
+                <h1 className="text-7xl md:text-9xl font-bold mb-8 flex flex-wrap justify-center lg:justify-start tracking-tight gap-x-6 gap-y-2">
+                    {words.map((wordData, wordIndex) => (
+                        <span key={wordIndex} className="inline-block whitespace-nowrap">
+                            {wordData.chars.map((charData, charIndex) => (
+                                <motion.span
+                                    key={charIndex}
+                                    custom={charData.index}
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={splitTextVariants}
+                                    className="inline-block"
+                                >
+                                    {charData.char}
+                                </motion.span>
+                            ))}
+                        </span>
                     ))}
                 </h1>
 
@@ -63,7 +76,7 @@ export const Hero: React.FC = () => {
                         <span className="text-primary font-semibold mt-2 block">ex-Apple, ex-Credit Kudos</span>
                     </p>
 
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 justify-center lg:justify-start">
                         <a
                             href="https://www.linkedin.com/in/jesse-murrell-23aa8b49/"
                             target="_blank"

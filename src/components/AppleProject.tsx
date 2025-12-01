@@ -78,7 +78,7 @@ export const AppleMagicBento: React.FC<AppleMagicBentoProps> = ({ className = ''
 
                         {/* Row 2: Security continues | Central Title (6 cols, 3 rows) | VP continues */}
                         <CentralTitleCard
-                            className="col-span-4 md:col-span-4 lg:col-span-6 row-span-3"
+                            className="col-span-4 md:col-span-4 lg:col-span-6 row-span-3 order-first md:order-0"
                             delay={0.3}
                         />
 

@@ -70,8 +70,8 @@ export const Nav: React.FC = () => {
             />
 
             {/* Side Navigation */}
-            <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
-                <ul className="flex flex-col gap-6">
+            <nav className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-md p-4 flex overflow-x-auto border-b border-white/10 lg:fixed lg:left-8 lg:top-1/2 lg:-translate-y-1/2 lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:flex-col lg:border-none lg:overflow-visible lg:w-auto scrollbar-hide">
+                <ul className="flex flex-row lg:flex-col gap-6 items-center lg:items-start min-w-max px-4 lg:px-0">
                     {navItems.map((item) => (
                         <li key={item.id} className="relative">
                             <button
@@ -88,14 +88,14 @@ export const Nav: React.FC = () => {
                             {(activeSection === item.id || item.subItems?.some(sub => sub.id === activeSection)) && (
                                 <motion.div
                                     layoutId="activeNav"
-                                    className="absolute -left-4 top-1.5 w-1.5 h-1.5 rounded-full bg-primary"
+                                    className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 lg:w-1.5 lg:h-1.5 lg:left-auto lg:-left-4 lg:top-1.5 lg:translate-x-0 rounded-full bg-primary"
                                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                 />
                             )}
 
                             {/* Sub-items */}
                             {item.subItems && (
-                                <ul className="mt-2 ml-4 flex flex-col gap-2 border-l border-white/10 pl-4">
+                                <ul className="hidden lg:flex mt-2 ml-4 flex-col gap-2 border-l border-white/10 pl-4">
                                     {item.subItems.map((subItem) => (
                                         <li key={subItem.id} className="relative">
                                             <button

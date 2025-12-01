@@ -41,12 +41,12 @@ const Card = ({
     return (
         <div 
             ref={container} 
-            className="h-screen flex items-center justify-end sticky top-0"
+            className="h-screen flex items-center justify-center md:justify-end sticky top-0"
             style={{ zIndex: index + 1 }}
         >
             <motion.div 
                 style={{ scale, top: `calc(-10% + ${index * 25}px)` }} 
-                className="relative w-[45vw] max-w-[600px] h-[400px] flex flex-col origin-top mr-10 md:mr-20"
+                className="relative w-[90vw] md:w-[45vw] max-w-[600px] h-[400px] flex flex-col origin-top mr-0 md:mr-20"
             >
                 {/* Role Header */}
                 {item.role && (
