@@ -260,6 +260,32 @@
             text-decoration: none;
         }
 
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 20px;
+                width: auto;
+            }
+            header {
+                padding-bottom: 30px;
+                margin-bottom: 30px;
+            }
+            .section {
+                display: block; /* Stack label and content */
+                gap: 0;
+            }
+            .section-label {
+                padding-top: 0;
+                margin-bottom: 15px;
+                color: var(--text-secondary); /* Optional: softer look for labels on mobile */
+            }
+            h1 {
+                font-size: 36px; /* Smaller heading */
+            }
+            .skills-grid {
+                grid-template-columns: 1fr; /* Stack skills */
+            }
+        }
+
         /* --- PRINT OPTIMIZATIONS --- */
         @media print {
             body { 
