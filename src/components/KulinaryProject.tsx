@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 // Import Assets
 import kulinaryLogo from '../assets/project_assets/kulinary/Kulinary Coloured Vertical.svg';
-import kulinaryScreenshot1 from '../assets/project_assets/kulinary/screnshot1.png';
 import kulinaryScreenshot2 from '../assets/project_assets/kulinary/Screenshot2.png';
 
 export const KulinaryProject: React.FC = () => {

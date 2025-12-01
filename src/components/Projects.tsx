@@ -64,7 +64,7 @@ export const projects = [
     },
 ];
 
-const ProjectCard: React.FC<{ project: typeof projects[0]; index: number }> = ({ project, index }) => {
+const ProjectCard: React.FC<{ project: typeof projects[0] }> = ({ project }) => {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -158,7 +158,7 @@ export const Projects: React.FC = () => {
                         ) : project.id === 'kulinary' ? (
                             <KulinaryProject />
                         ) : (
-                            <ProjectCard project={project} index={index} />
+                            <ProjectCard project={project} />
                         )}
                     </section>
                 ))}

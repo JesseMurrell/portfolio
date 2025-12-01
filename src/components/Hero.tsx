@@ -12,7 +12,7 @@ const splitTextVariants = {
         transition: {
             delay: i * 0.05,
             duration: 0.6,
-            ease: [0.22, 1, 0.36, 1], // Custom ease for "Apple-like" feel
+            ease: [0.22, 1, 0.36, 1] as [number, number, number, number], // Custom ease for "Apple-like" feel
         },
     }),
 };
@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ delay: 0.8, duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
                     className="max-w-3xl"
                 >
                     <h2 className="text-3xl md:text-4xl text-secondary font-medium mb-6 tracking-tight">

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Shield, Users, Globe, Lock, Code, Award } from 'lucide-react';
 import appleLogoBlack from '../assets/company_logos/apple-black.svg';
 import appleLogoWhite from '../assets/company_logos/apple-white.svg';
