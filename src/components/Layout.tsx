@@ -17,14 +17,17 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     }, []);
 
     useEffect(() => {
+        console.log('Theme state changed:', { isDark, classList: document.documentElement.classList.toString() });
         if (isDark) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
+        console.log('Theme applied. HTML classes:', document.documentElement.classList.toString());
     }, [isDark]);
 
     const toggleTheme = () => {
+        console.log('Toggling theme. Current:', isDark);
         setIsDark(!isDark);
     };
 

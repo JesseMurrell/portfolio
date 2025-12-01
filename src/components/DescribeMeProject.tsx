@@ -40,17 +40,17 @@ export const DescribeMeProject: React.FC = () => {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-8"
             >
                 {/* Left Card - Project Explanation */}
-                <div className="bg-[#1c1c1e]/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-2xl flex flex-col justify-between h-full">
+                <div className="bg-white/80 dark:bg-[#1c1c1e]/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-black/5 dark:border-white/10 shadow-2xl flex flex-col justify-between h-full">
                     <div>
                         <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 overflow-hidden">
                             <img src={dmLogo} alt="DescribeMe Logo" className="w-full h-full object-cover" />
                         </div>
                         
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
                             DescribeMe
                         </h2>
                         
-                        <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                        <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
                             AI captions tailored to the mood and moment! From Gen Z and ancient energy to cutesy vibes, DescribeMe captions your photos with unique, personalised captions.
                         </p>
 
@@ -58,22 +58,22 @@ export const DescribeMeProject: React.FC = () => {
                             <div className="flex items-start gap-4">
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2.5" />
                                 <div>
-                                    <h4 className="text-white font-semibold text-lg mb-1">Custom AI Captions</h4>
-                                    <p className="text-gray-400">Upload photos and instantly receive custom AI-generated captions tailored to your image.</p>
+                                    <h4 className="text-gray-900 dark:text-white font-semibold text-lg mb-1">Custom AI Captions</h4>
+                                    <p className="text-gray-500 dark:text-gray-400">Upload photos and instantly receive custom AI-generated captions tailored to your image.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2.5" />
                                 <div>
-                                    <h4 className="text-white font-semibold text-lg mb-1">Select a Generation</h4>
-                                    <p className="text-gray-400">Choose from Gen Alpha, Gen Z, or Millennial styles to match your vibe perfectly.</p>
+                                    <h4 className="text-gray-900 dark:text-white font-semibold text-lg mb-1">Select a Generation</h4>
+                                    <p className="text-gray-500 dark:text-gray-400">Choose from Gen Alpha, Gen Z, or Millennial styles to match your vibe perfectly.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2.5" />
                                 <div>
-                                    <h4 className="text-white font-semibold text-lg mb-1">Choose a Tone</h4>
-                                    <p className="text-gray-400">Pick from cutesy, savage, wholesome, or unhinged tones for the perfect caption.</p>
+                                    <h4 className="text-gray-900 dark:text-white font-semibold text-lg mb-1">Choose a Tone</h4>
+                                    <p className="text-gray-500 dark:text-gray-400">Pick from cutesy, savage, wholesome, or unhinged tones for the perfect caption.</p>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ export const DescribeMeProject: React.FC = () => {
 
                     <div className="flex flex-wrap gap-3 mt-auto">
                         {['React Native','OpenAI', 'AI'].map((tag) => (
-                            <span key={tag} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-gray-300">
+                            <span key={tag} className="px-4 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 text-sm font-medium text-gray-600 dark:text-gray-300">
                                 {tag}
                             </span>
                         ))}
@@ -89,16 +89,16 @@ export const DescribeMeProject: React.FC = () => {
                 </div>
 
                 {/* Right Card - Slim App Store */}
-                <div className="bg-[#1c1c1e]/80 backdrop-blur-xl rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl flex flex-col h-[800px]">
+                <div className="bg-white/80 dark:bg-[#1c1c1e]/80 backdrop-blur-xl rounded-[2.5rem] overflow-hidden border border-black/5 dark:border-white/10 shadow-2xl flex flex-col h-[800px]">
                     {/* Header */}
                     <div className="p-8 pb-0">
                         <div className="flex gap-5 items-center mb-6">
-                            <div className="w-24 h-24 rounded-[22%] overflow-hidden border border-white/10 shadow-lg bg-black flex-shrink-0">
+                            <div className="w-24 h-24 rounded-[22%] overflow-hidden border border-black/5 dark:border-white/10 shadow-lg bg-gray-100 dark:bg-black flex-shrink-0">
                                 <img src={dmLogo} alt="DescribeMe Logo" className="w-full h-full object-cover" />
                             </div>
                             <div>
-                                <h3 className="text-2xl font-bold text-white mb-1">DescribeMe</h3>
-                                <p className="text-gray-400 font-medium text-sm mb-3">AI Caption Generator</p>
+                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">DescribeMe</h3>
+                                <p className="text-gray-500 dark:text-gray-400 font-medium text-sm mb-3">AI Caption Generator</p>
                                 <div className="flex gap-2">
                                     <a 
                                         href="https://apps.apple.com/gb/app/describeme-caption-app/id6740031053"
@@ -115,18 +115,18 @@ export const DescribeMeProject: React.FC = () => {
                         </div>
 
                         {/* Stats */}
-                        <div className="flex justify-between border-t border-b border-white/10 py-4 mb-6 overflow-x-auto">
-                            <div className="px-4 text-right border-r border-white/10 last:border-0">
+                        <div className="flex justify-between border-t border-b border-black/5 dark:border-white/10 py-4 mb-6 overflow-x-auto">
+                            <div className="px-4 text-right border-r border-black/5 dark:border-white/10 last:border-0">
                                 <div className="text-[10px] font-bold text-gray-500 mb-0.5">RATING</div>
-                                <div className="text-lg font-bold text-gray-300">5.0</div>
+                                <div className="text-lg font-bold text-gray-900 dark:text-gray-300">5.0</div>
                             </div>
-                            <div className="px-4 text-right border-r border-white/10 last:border-0">
+                            <div className="px-4 text-right border-r border-black/5 dark:border-white/10 last:border-0">
                                 <div className="text-[10px] font-bold text-gray-500 mb-0.5">AGE</div>
-                                <div className="text-lg font-bold text-gray-300">12+</div>
+                                <div className="text-lg font-bold text-gray-900 dark:text-gray-300">12+</div>
                             </div>
-                            <div className="px-4 text-right border-r border-white/10 last:border-0">
+                            <div className="px-4 text-right border-r border-black/5 dark:border-white/10 last:border-0">
                                 <div className="text-[10px] font-bold text-gray-500 mb-0.5">CATEGORY</div>
-                                <div className="text-lg font-bold text-gray-300">Social</div>
+                                <div className="text-lg font-bold text-gray-900 dark:text-gray-300">Social</div>
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ export const DescribeMeProject: React.FC = () => {
                                 {screenshots.map((item, index) => (
                                     <div
                                         key={index}
-                                        className="w-[220px] h-[480px] rounded-[2rem] overflow-hidden bg-black/50 border border-white/10 flex-shrink-0 relative"
+                                        className="w-[220px] h-[480px] rounded-[2rem] overflow-hidden bg-gray-100 dark:bg-black/50 border border-black/5 dark:border-white/10 flex-shrink-0 relative"
                                     >
                                         <img 
                                             src={item.src} 
@@ -155,9 +155,9 @@ export const DescribeMeProject: React.FC = () => {
                         <div className="px-8 pb-8">
                              <div className="mb-8">
                                 <div className="flex justify-between items-baseline mb-3">
-                                    <h3 className="text-xl font-bold text-white">About</h3>
+                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">About</h3>
                                 </div>
-                                <div className="text-sm text-gray-300 leading-relaxed space-y-4">
+                                <div className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
                                     <p>
                                         DescribeMe is a fun and creative app that uses cutting-edge AI to generate captions for your photos. Whether you want a Gen-Z vibe, a cutesy tone, or something completely savage, DescribeMe makes it easy to craft personalized captions that stand out.
                                     </p>
@@ -173,9 +173,9 @@ export const DescribeMeProject: React.FC = () => {
                                     href="https://apps.apple.com/gb/app/describeme-caption-app/id6740031053"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-3 w-full py-3 bg-[#1c1c1e] border border-white/20 hover:bg-white/5 text-white rounded-xl font-medium transition-all group"
+                                    className="flex items-center justify-center gap-3 w-full py-3 bg-gray-100 dark:bg-[#1c1c1e] border border-black/5 dark:border-white/20 hover:bg-gray-200 dark:hover:bg-white/5 text-gray-900 dark:text-white rounded-xl font-medium transition-all group"
                                 >
-                                    <img src={appleLogo} alt="Apple" className="w-5 h-5 opacity-80 group-hover:opacity-100" />
+                                    <img src={appleLogo} alt="Apple" className="w-5 h-5 opacity-80 group-hover:opacity-100 invert dark:invert-0" />
                                     Download on the App Store
                                 </a>
                             </div>

@@ -63,28 +63,28 @@ const Card = ({
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full h-full bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between group transition-colors hover:border-white/20 overflow-hidden relative"
+                    className="w-full h-full bg-white dark:bg-[#111] border border-black/5 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-between group transition-colors hover:border-black/10 dark:hover:border-white/20 overflow-hidden relative shadow-xl dark:shadow-none"
                 >
                     {/* Faded Logo Background - Centered */}
                     {item.logo && (
                         <div className="absolute inset-0 flex items-center justify-center opacity-[0.05] group-hover:opacity-[0.1] transition-opacity duration-500 grayscale pointer-events-none select-none">
-                             <img src={item.logo} alt="" className="w-4/5 h-4/5 object-contain invert" />
+                             <img src={item.logo} alt="" className="w-4/5 h-4/5 object-contain dark:invert" />
                         </div>
                     )}
 
                     <div className="relative z-10 flex justify-between items-start">
                         <div>
-                            <p className="text-xs font-bold text-white/60 mb-3 uppercase tracking-widest">
+                            <p className="text-xs font-bold text-gray-500 dark:text-white/60 mb-3 uppercase tracking-widest">
                                 {item.source} {item.date && `• ${item.date}`}
                             </p>
-                            <h3 className="text-3xl md:text-4xl font-black tracking-tight text-white group-hover:text-blue-400 transition-colors leading-tight">
+                            <h3 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900 dark:text-white group-hover:text-blue-400 transition-colors leading-tight">
                                 {item.title}
                             </h3>
                         </div>
-                        <ExternalLink className="w-6 h-6 text-white/40 group-hover:text-white transition-colors" />
+                        <ExternalLink className="w-6 h-6 text-gray-400 dark:text-white/40 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
                     </div>
 
-                    <p className="relative z-10 text-lg text-white/80 leading-relaxed font-medium max-w-md">
+                    <p className="relative z-10 text-lg text-gray-600 dark:text-white/80 leading-relaxed font-medium max-w-md">
                         {item.description}
                     </p>
                 </a>
