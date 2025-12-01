@@ -124,9 +124,9 @@ export const Contact: React.FC = () => {
                         <div className="space-y-4">
                             <SocialCard
                                 title="CV"
-                                description="Download my full professional history, including detailed case studies."
+                                description="Explore more of my professional experience."
                                 icon={FileText}
-                                href="/assets/(12) Jesse Murrell | LinkedIn.pdf"
+                                href="/cv.html"
                                 gradient="from-blue-500/20 via-indigo-500/20 to-purple-500/20"
                             />
                             <SocialCard

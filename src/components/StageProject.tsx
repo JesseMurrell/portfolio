@@ -76,7 +76,7 @@ export const StageProject: React.FC = () => {
             <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                className="mb-4 text-center lg:text-left lg:ml-2"
+                className="mb-4 text-left lg:ml-2"
             >
                 <span className="text-sm font-medium text-blue-400 tracking-wide uppercase">Contract Role</span>
             </motion.div>

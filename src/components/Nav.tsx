@@ -27,7 +27,7 @@ export const Nav: React.FC = () => {
                     }
                 });
             },
-            { threshold: 0.2, rootMargin: '-20% 0px -35% 0px' }
+            { threshold: 0.1, rootMargin: '-40% 0px -40% 0px' }
         );
 
         // Observe main sections and project subsections
@@ -70,7 +70,7 @@ export const Nav: React.FC = () => {
                                     onClick={() => scrollToSection(item.id)}
                                     className={`text-sm font-medium transition-colors duration-300 ${activeSection === item.id || item.subItems?.some(sub => sub.id === activeSection)
                                         ? 'text-primary'
-                                        : 'text-secondary hover:text-foreground'
+                                        : 'text-zinc-600 dark:text-zinc-400 hover:text-foreground'
                                         }`}
                                 >
                                     {item.label}
@@ -94,7 +94,7 @@ export const Nav: React.FC = () => {
                                                     onClick={() => scrollToSection(subItem.id)}
                                                     className={`text-xs transition-colors duration-300 text-left ${activeSection === subItem.id
                                                         ? 'text-primary font-medium'
-                                                        : 'text-secondary/60 hover:text-foreground'
+                                                        : 'text-zinc-500 dark:text-zinc-500 hover:text-foreground'
                                                         }`}
                                                 >
                                                     {subItem.label}

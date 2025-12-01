@@ -55,7 +55,9 @@ const Card = ({
                         whileInView={{ opacity: 1, x: 0 }}
                         className="mb-4 ml-2"
                     >
-                        <span className="text-xs font-medium text-blue-400 tracking-wide uppercase">{item.role}</span>
+                        <span className="inline-block px-4 py-2 glass rounded-full text-xs font-medium text-blue-400 tracking-wide uppercase">
+                            {item.role}
+                        </span>
                     </motion.div>
                 )}
 
