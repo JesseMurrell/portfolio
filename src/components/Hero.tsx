@@ -87,7 +87,7 @@ export const Hero: React.FC = () => {
                             <Linkedin className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
                         </a>
                         <a
-                            href="/cv.html"
+                            href="/portfolio/cv.html"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-4 glass rounded-full hover:scale-105 hover:bg-white/20 transition-all duration-300 group"

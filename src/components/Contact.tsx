@@ -126,7 +126,7 @@ export const Contact: React.FC = () => {
                                 title="CV"
                                 description="Explore more of my professional experience."
                                 icon={FileText}
-                                href="/cv.html"
+                                href="/portfolio/cv.html"
                                 gradient="from-blue-500/20 via-indigo-500/20 to-purple-500/20"
                             />
                             <SocialCard
