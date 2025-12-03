@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jesse Murrell - Resume</title>
-    <!-- Inline CSS for GitHub Pages compatibility without separate stylesheet -->
     <style>
         /* APPLE DESIGN SYSTEM VARIABLES */
         :root {
@@ -260,32 +259,6 @@
             text-decoration: none;
         }
 
-        @media (max-width: 768px) {
-            body {
-                padding: 30px 20px;
-                width: auto;
-            }
-            header {
-                padding-bottom: 30px;
-                margin-bottom: 30px;
-            }
-            .section {
-                display: block; /* Stack label and content */
-                gap: 0;
-            }
-            .section-label {
-                padding-top: 0;
-                margin-bottom: 15px;
-                color: var(--text-secondary); /* Optional: softer look for labels on mobile */
-            }
-            h1 {
-                font-size: 36px; /* Smaller heading */
-            }
-            .skills-grid {
-                grid-template-columns: 1fr; /* Stack skills */
-            }
-        }
-
         /* --- PRINT OPTIMIZATIONS --- */
         @media print {
             body { 
@@ -303,12 +276,19 @@
 
     <header>
         <h1>Jesse Murrell</h1>
-        <div class="subtitle">Head of Platform @ Stage <span class="ex-apple-badge">Ex-Apple (Apple Pay)</span></div>
+        <div class="subtitle">Head of Platform @ Stage <span class="ex-apple-badge">Ex-Apple (Pay)</span></div>
         <!--  -->
         <div class="contact-bar">
             <span>London, UK | Manchester, UK  | Remote </span>
             <a href="mailto:jesse.k.murrell@hotmail.com">jesse.k.murrell@hotmail.com</a>
-            <a href="https://www.linkedin.com/in/jesse-murrell">LinkedIn Profile</a>
+            <a href="https://JesseMurrell.github.io/portfolio">Portfolio</a>
+            <a href="https://www.linkedin.com/in/jesse-murrell-23aa8b49/" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom;">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
         </div>
     </header>
 
@@ -329,7 +309,7 @@
             <!-- STAGE -->
             <div class="job-group">
                 <div class="logo-container">
-                    <img src="assets/stage-logo.png" class="company-logo invert-logo" alt="Stage Logo">
+                    <img src="src/assets/company_logos/stage-logo.png" class="company-logo invert-logo" alt="Stage Logo">
                 </div>
                 <div class="job-content">
                     <div class="job-title">Head of Platform</div>
@@ -345,7 +325,7 @@
 
             <div class="job-group">
                 <div class="logo-container">
-                    <img src="assets/stage-logo.png" class="company-logo invert-logo" alt="Stage Logo">
+                    <img src="src/assets/company_logos/stage-logo.png" class="company-logo invert-logo" alt="Stage Logo">
                 </div>
                 <div class="job-content">
                     <div class="job-title">AI & ML Engineering Manager</div>
@@ -360,7 +340,7 @@
             <!-- APPLE -->
             <div class="job-group">
                 <div class="logo-container">
-                    <img src="assets/apple.svg" class="company-logo" alt="Apple Logo">
+                    <img src="src/assets/company_logos/apple.svg" class="company-logo" alt="Apple Logo">
                 </div>
                 <div class="job-content">
                     <div class="job-title">Lead Data Engineer (Apple Pay / Wallet)</div>
@@ -376,7 +356,7 @@
             <!-- CREDIT KUDOS -->
             <div class="job-group">
                 <div class="logo-container">
-                    <img src="assets/Credit-kudos-logo-1.png" class="company-logo" alt="Credit Kudos Logo">
+                    <img src="src/assets/project_assets/kulinary/Credit-kudos-logo-1.png" class="company-logo" alt="Credit Kudos Logo">
                 </div>
                 <div class="job-content">
                     <div class="job-title">Senior Data Engineer</div>
@@ -391,7 +371,7 @@
             <!-- STINT -->
             <div class="job-group">
                 <div class="logo-container">
-                    <img src="assets/stint_logo.svg" class="company-logo" alt="Stint Logo">
+                    <img src="src/assets/company_logos/stint_logo.svg" class="company-logo" alt="Stint Logo">
                 </div>
                 <div class="job-content">
                     <div class="job-title">Platform Data Engineer</div>
@@ -411,7 +391,7 @@
             <div class="app-box">
                 <div class="venture-header">
                     <div class="venture-logo">
-                        <img src="assets/heart-logo.svg" alt="Mental Mamba Logo">
+                        <img src="src/assets/project_assets/mental_mamba/heart-logo.svg" alt="Mental Mamba Logo">
                     </div>
                     <div>
                         <div class="job-title">Mental Mamba</div>
@@ -425,7 +405,7 @@
             <div class="app-box">
                 <div class="venture-header">
                     <div class="venture-logo">
-                        <img src="assets/describe-me-app-logo.png" alt="DescribeMe Logo">
+                        <img src="src/assets/project_assets/Describeme/describe-me-app-logo.png" alt="DescribeMe Logo">
                     </div>
                     <div>
                         <div class="job-title">DescribeMe</div>
