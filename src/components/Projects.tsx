@@ -137,7 +137,7 @@ export const Projects: React.FC = () => {
                 transition={{ delay: 0.1 }}
                 className="text-xl text-secondary mb-20 max-w-2xl"
             >
-                Roles, Businesses and Projects from the last 4 years. For more, <a href="#contact" className="text-primary hover:text-white transition-colors">contact me or check out my CV</a>.
+                Roles, Businesses and Projects from the last 4 years. For more information, <a href="#contact" className="text-primary hover:text-white transition-colors">contact me or check out my CV</a>.
             </motion.p>
 
             <div className="flex flex-col gap-32">
