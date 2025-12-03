@@ -159,7 +159,7 @@ export const DescribeMeProject: React.FC = () => {
                                 </div>
                                 <div className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
                                     <p>
-                                        DescribeMe is a fun and creative app that uses cutting-edge AI to generate captions for your photos. Whether you want a Gen-Z vibe, a cutesy tone, or something completely savage, DescribeMe makes it easy to craft personalized captions that stand out.
+                                        DescribeMe is a fun and creative app that uses cutting-edge AI to generate captions for your photos. Whether you want a Gen-Z vibe, a cutesy tone, or something completely savage, DescribeMe makes it easy to craft personalised captions that stand out.
                                     </p>
                                     <p>
                                         Perfect for social media, memes, or simply sharing laughs with friends. Powered by advanced AI, DescribeMe turns your photos into stories. Download now and make every picture pop with personality!
