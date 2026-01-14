@@ -4,9 +4,7 @@ import { motion } from 'framer-motion';
 import amazon from '../assets/company_logos/amazon.svg';
 import amex from '../assets/company_logos/americanexpress.svg';
 import apple from '../assets/company_logos/apple.svg';
-import barclays from '../assets/company_logos/barclays.svg';
 import buma from '../assets/company_logos/bumastemra.svg';
-import capital from '../assets/company_logos/capital.svg';
 import google from '../assets/company_logos/google.svg';
 import havas from '../assets/company_logos/havas.svg';
 import kpmg from '../assets/company_logos/kpmg.svg';
@@ -19,8 +17,6 @@ const companies = [
     { name: 'Google', logo: google },
     { name: 'Amazon', logo: amazon },
     { name: 'American Express', logo: amex },
-    { name: 'Barclays', logo: barclays },
-    { name: 'Capital', logo: capital },
     { name: 'Monzo', logo: monzo },
     { name: 'Starling', logo: starling },
     { name: 'KPMG', logo: kpmg },

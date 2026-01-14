@@ -6,6 +6,7 @@ import { MentalMambaProject } from './MentalMambaProject';
 import { StageProject } from './StageProject';
 import { DescribeMeProject } from './DescribeMeProject';
 import { KulinaryProject } from './KulinaryProject';
+import { SentimentProject } from './SentimentProject';
 
 // Import Mental Mamba Assets
 import mmLogo from '../assets/project_assets/mental_mamba/heart-logo.svg';
@@ -13,6 +14,15 @@ import mmHome from '../assets/project_assets/mental_mamba/home_formatted_clean.j
 import mmGameplay from '../assets/project_assets/mental_mamba/gameplay_video_30_trimmed_encoded_silent.mov';
 
 export const projects = [
+    {
+        id: 'sentiment',
+        title: 'Sentiment',
+        description: 'Create treasured memory books from guest messages via QR codes. Perfect for funerals, weddings, and celebrations.',
+        link: 'https://www.sentimentsoflife.com',
+        tags: ['React', 'AWS', 'Stripe'],
+        color: 'bg-emerald-500/5',
+        assets: null,
+    },
     {
         id: 'mental-mamba',
         title: 'Mental Mamba',
@@ -145,9 +155,11 @@ export const Projects: React.FC = () => {
                     <section 
                         key={index} 
                         id={project.id} 
-                        className={project.id === 'apple' || project.id === 'mental-mamba' || project.id === 'stage' || project.id === 'describeme' ? '' : 'scroll-mt-48'}
+                        className={project.id === 'apple' || project.id === 'mental-mamba' || project.id === 'stage' || project.id === 'describeme' || project.id === 'sentiment' ? '' : 'scroll-mt-48'}
                     >
-                        {project.id === 'apple' ? (
+                        {project.id === 'sentiment' ? (
+                            <SentimentProject />
+                        ) : project.id === 'apple' ? (
                             <AppleMagicBento />
                         ) : project.id === 'mental-mamba' ? (
                             <MentalMambaProject />
